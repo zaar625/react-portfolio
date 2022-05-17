@@ -1,0 +1,27 @@
+.social{
+    display: flex;
+    flex-direction: column;
+}
+.social-container {
+   display: grid;
+   grid-template-columns: repeat(2,1fr);
+   gap: 1rem;
+
+    div {
+        width: 390px;
+        border-radius: 20px;
+    }
+}
+.swiper-slide {
+    padding-top: 100%;
+    overflow: hidden;
+    position: relative;
+
+    img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        object-fit: contain;
+    }
+}
