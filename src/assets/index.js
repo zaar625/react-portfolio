@@ -15,6 +15,7 @@ export const skillImages02 = [
     require('./images/skill/figma.jpg'),
     require('./images/skill/firebase.jpg'),
     require('./images/skill/github.jpg'),
+    require('./images/skill/notion.jpg'),
 ]
 
 export const experience = [

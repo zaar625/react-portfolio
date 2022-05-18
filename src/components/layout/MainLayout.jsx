@@ -10,14 +10,16 @@ import Navbar from '../navbar/Navbar'
 const MainLayout = () => {
     return (
         <BrowserRouter>
-            <Sidebar />
-            <div className='layout__content'>
-                <Navbar/>
-                <div className='layout__content-main'>
-                    <Routes>
-                        <Route path="/" element={<Aboutme />}></Route>
-                        <Route element={<Portfolio />} />
-                    </Routes>
+            <div className='main__layout'>
+                <Sidebar />
+                <div className='main__layout__content'>
+                    <Navbar/>
+                    <div className='layout__content__main col-12'>
+                        <Routes>
+                            <Route path="/" element={<Aboutme />}></Route>
+                            <Route element={<Portfolio />} />
+                        </Routes>
+                    </div>
                 </div>
             </div>
         </BrowserRouter>

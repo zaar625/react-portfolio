@@ -14,8 +14,10 @@
             height: 45px;
             border-radius: 5px;
             overflow: hidden;
+
             img{
-                image-orientation: contain;
+                width: 45px;
+                object-fit: cover;
             }
         }
     }

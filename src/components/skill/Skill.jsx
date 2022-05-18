@@ -27,9 +27,6 @@ export const options = {
       display: true,
       text: '',
     },
-    // grid:{
-    //     display:false
-    // }
   },
 };
 
@@ -39,24 +36,31 @@ export const data = {
   labels,
   datasets: [{
     label:'',
-    data: [65, 59, 80, 81, 56, 55, 40],
+    data: [90, 90, 70, 60, 50, 50],
     fill: true,
     backgroundColor: [
-      'rgba(250, 199, 15, 0.3)',
+      'rgba(249, 86, 77, 0.7)',
+      'rgba(60, 67, 234, 0.7)',
+      'rgba(251, 223, 0, 0.7)',
+      'rgba(72, 178, 192, 0.7)',
+      'rgba(0, 122, 204, 0.7)',
+      'rgba(144, 204, 97, 0.7)',
     ],
     borderColor: [
-      'rgb(250, 199, 15)',
+      'rgb(249, 86, 77)',
+      'rgb(60, 67, 234)',
+      'rgb(251, 223, 0)',
+      'rgb(72, 178, 192)',
+      'rgb(0, 122, 204)',
+      'rgb(144, 204, 97)',
     ],
     borderWidth: 1
   }],
 };
 
-
-
-
 const Skill = () => {
   return (
-    <div className='skill'>
+    <div className='skill col-5'>
       <div className='skill__chart cardstyle'>
         <div className='title'>
           Skill Chart

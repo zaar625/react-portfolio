@@ -3,7 +3,7 @@ import './intro.scss'
 
 const Intro = () => {
   return (
-    <div className='intro cardstyle'>
+    <div className='intro col-8 cardstyle'>
       <div className='title'>Introduce</div>
       <p>
       안녕하세요. 프론트앤드 개발자를 꿈꾸는 저를 소개합니다.

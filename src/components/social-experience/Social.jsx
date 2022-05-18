@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Navigation, Thumbs, Pagination, Autoplay  } from 'swiper'
-import {experience} from '../../assets'
+import {experience} from '../../assets/index'
 import { work_description } from '../../configs/sidebarNav'
 
 import 'swiper/css'
@@ -11,15 +11,45 @@ import 'swiper/css/thumbs'
 import './social.scss'
 
 export const Description = (props) => {
-  console.log(props.index)
-  // console.log(work_description[props.index].title)
-  return(
-    <div className='social__des'>
-    {
-      props.index !== undefined ? work_description[props.index].title : ''
-    }
-    </div>
-    )
+  let work = work_description[props.index];
+
+  return (
+      props.index !== undefined ? 
+      (<div className='des'>
+        <div className='des__header'>
+          <div className='des__header__title'>
+            <h2>{work.title}</h2>
+            <span>{work.date}</span>
+          </div>
+          <div className='des__header__depart'>{work.department}</div>
+        </div>
+        <div className='des__contents'>
+          <div className='des__contents__key'>
+            <h4>Key Work</h4>
+            <div>
+              {
+                work.keywork.map((keywork, index)=>(
+                  <span>{keywork}</span>
+                ))
+              }
+            </div>
+          </div>
+          <div className='des__contents__detail'>
+            <h4>Work Detail</h4>
+            <ul>
+            {
+              work.workdetail.map((detail, index)=>(
+                <li>{detail}</li>
+              ))
+
+            }
+            </ul>
+          </div>
+        </div>
+      </div>
+      )
+    : ''
+  )
 }
 
 
@@ -28,7 +58,7 @@ const Social = () => {
   console.log(index)
 
   return (
-    <div className='social cardstyle'>
+    <div className='social col-7 cardstyle'>
       <div className="title">Social Experience</div>
       <div className='social-container'>
         <div className='social__img'>
@@ -57,6 +87,7 @@ const Social = () => {
           index={index}
         />
       </div>
+      <span>View more <i class='bx bx-right-arrow-alt'></i></span>
     </div>
   )
 }

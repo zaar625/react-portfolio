@@ -7,6 +7,7 @@ import Social from '../components/social-experience/Social'
 
 const Aboutme = () => {
   return (
+    // 라우터구간
     <div className='about__me'>
       <div className='grid'>
           <div className='row__one'>

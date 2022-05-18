@@ -26,7 +26,7 @@ const Sidebar = () => {
   const activeItem = sidebarNav.findIndex(item => item.link === location.pathname)
 
   return (
-    <div className='slidebar'>
+    <div className='slidebar col-2'>
       <div className='top'>
         <div className='logo'>
           <img className="logo__lee" src={logoLee} alt="" />

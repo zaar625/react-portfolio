@@ -30,20 +30,32 @@ export const work_description = [
     {
         img:`${experience[0]}`,
         title:'coffeenie',
-        data:'2019.09 ~ 2021.08',
+        date:'2019.09 ~ 2021.08',
         department:'사업지원팀(Business Support Team)',
         keywork: ['직영매장 운영관리', 'KPI 지표관리', '신규입사자 및 가맹교육', '음료개발 및 구매'],
         workdetail:['시즌 음료 및 푸드 개발', '원자재 구매 및 단가 협상', '신규 입사자 및 가맹사업주 교육', '교육 프로세스 정립', '직영 매장별 정산(지표관리)']
 
     },
     {
-        title:'Satrbucks'
+        title:'Satrbucks',
+        date:'2019.09 ~ 2021.08',
+        department:'사업지원팀(Business Support Team)',
+        keywork: ['직영매장 운영관리', 'KPI 지표관리', '신규입사자 및 가맹교육', '음료개발 및 구매'],
+        workdetail:['시즌 음료 및 푸드 개발', '원자재 구매 및 단가 협상', '신규 입사자 및 가맹사업주 교육', '교육 프로세스 정립', '직영 매장별 정산(지표관리)']
     },
     {
-        title:'Me-In shop'
+        title:'Me-In shop',
+        date:'2019.09 ~ 2021.08',
+        department:'사업지원팀(Business Support Team)',
+        keywork: ['직영매장 운영관리', 'KPI 지표관리', '신규입사자 및 가맹교육', '음료개발 및 구매'],
+        workdetail:['시즌 음료 및 푸드 개발', '원자재 구매 및 단가 협상', '신규 입사자 및 가맹사업주 교육', '교육 프로세스 정립', '직영 매장별 정산(지표관리)']
     },
     {
-        title:'Zara'
+        title:'Zara',
+        date:'2010.09 ~ 2023.08',
+        department:'사업지원팀(Business Support Team)',
+        keywork: ['직영매장 운영관리', 'ddd교육', '음료개발 및 구매'],
+        workdetail:['시즌 음료 및 푸드 개발', '원자재 구매 및 단가 협상', '신규 입사자 및 가맹사업주 교육', '교육 프로세스 정립', '직영 매장별 정산(지표관리)']
     },
 ]
 

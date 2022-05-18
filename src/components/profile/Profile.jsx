@@ -5,7 +5,7 @@ import profileImage from '../../assets/images/profile.jpeg'
 
 const Profile = () => {
   return (
-    <div className='profile cardstyle'>
+    <div className='profile col-4 cardstyle'>
       <div className='profile__info'>
         <div className='profile__info__image'>
           <img src={profileImage} alt="profile"/>
