@@ -1,7 +1,7 @@
 .slidebar {
     position: fixed;
     left: 0;
-    background-color: #212121;
+    background-color:var(--second-bg);
     height: 100vh;
     display: flex;
     flex-direction: column;
@@ -24,11 +24,13 @@
         justify-content: center;
         align-items: center;
         gap: 2rem;
-
+        
+    
         &__lee {
             position: absolute;
             left: 0;
             top: -30px;
+            
         }
     }
     .links {
@@ -44,17 +46,19 @@
             li {
                 padding: 0.6rem 1rem;
                 border-radius: 0.6rem;
+
                 &:hover {
-                background-color: #ffc107;
-                a {
-                    color: black;
+                    background-color: var(--main-color);
+                    a {
+                        color: black;
+                    }
                 }
-                }
+
                 a {
                 text-decoration: none;
                 display: flex;
                 gap: 1rem;
-                color: white;
+                color: var(--txt-color);
                 align-items: center;
                 }
                 i {
@@ -62,7 +66,7 @@
                 }
             }
             .active {
-                background-color: #ffc107;
+                background-color:var(--main-color);
                 a {
                 color: black;
                 }

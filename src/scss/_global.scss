@@ -1,5 +1,4 @@
-@use './variables' as *;
-@use './mixin' as *;
+@use './utils/' as *;
 
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500&family=Roboto:wght@300;400;500;700;900&display=swap');
 
@@ -22,8 +21,6 @@ html {
 body {
   font-family: 'Montserrat', sans-serif;
   // font-family: 'Roboto', sans-serif;
-  background-color: black;
-  color: white;
   overflow-x: hidden;
 }
 
@@ -36,12 +33,21 @@ ul,
 li {
   list-style-type: none;
 }
+button {
+  cursor: pointer;
+  background-color: transparent;
+  border: 0;
+  outline: 0;
+  color:white;
+}
+
 
 .cardstyle {
   padding: 1rem;
   border-radius:1rem ;
-  background-color: #212121;
-  color: white;
+  background-color: var(--second-bg);
+  color: var(--txt-color);
+
 }
 
 ::-webkit-scrollbar {

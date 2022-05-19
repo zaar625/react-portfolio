@@ -1,5 +1,10 @@
+@use '../../scss/utils/' as *;
+@use '../../scss/theme' as *;
+
 .main__layout {
     width:100vw;
+    background-color: var(--main-bg);
+    color: var(--txt-color);
 
     &__content{
         margin-left: 16.66%;//nav 제외

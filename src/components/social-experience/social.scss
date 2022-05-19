@@ -33,7 +33,7 @@
         margin: auto 0 auto auto;
 
         &:hover {
-            color:#FAC70F
+            color:var(--main-color)
         }
     }
 }
@@ -44,6 +44,7 @@
     width: 100%;
     flex-direction: column;
     gap: 1rem;
+
 
     &__header {
         display: flex;
@@ -80,7 +81,7 @@
                 gap: 10px;
                 
                 span {
-                    background-color: black;
+                    background-color: var(--main-bg);
                     border-radius: 20px;
                     padding: 0.5rem;
                     font-size: 0.825rem;

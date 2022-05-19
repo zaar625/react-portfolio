@@ -29,7 +29,7 @@ export const Description = (props) => {
             <div>
               {
                 work.keywork.map((keywork, index)=>(
-                  <span>{keywork}</span>
+                  <span key={index}>{keywork}</span>
                 ))
               }
             </div>
@@ -39,7 +39,7 @@ export const Description = (props) => {
             <ul>
             {
               work.workdetail.map((detail, index)=>(
-                <li>{detail}</li>
+                <li key={index}>{detail}</li>
               ))
 
             }
@@ -55,7 +55,7 @@ export const Description = (props) => {
 
 const Social = () => {
   const [index, setIndex] = useState();
-  console.log(index)
+  // console.log(index)
 
   return (
     <div className='social col-7 cardstyle'>
@@ -65,7 +65,7 @@ const Social = () => {
           <Swiper
             modules={[Navigation, Thumbs, Pagination,Autoplay ]}
             loop={true}
-            autoplay={true} 
+            autoplay={false} 
             pagination={{ clickable: true }}
             spaceBetween={10}
             navigation={false}
@@ -87,7 +87,7 @@ const Social = () => {
           index={index}
         />
       </div>
-      <span>View more <i class='bx bx-right-arrow-alt'></i></span>
+      <span>View more <i className='bx bx-right-arrow-alt'></i></span>
     </div>
   )
 }

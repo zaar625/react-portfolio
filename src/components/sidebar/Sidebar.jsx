@@ -30,7 +30,7 @@ const Sidebar = () => {
       <div className='top'>
         <div className='logo'>
           <img className="logo__lee" src={logoLee} alt="" />
-          <img src={logoPortfolio} alt="" />
+          <img className="logo__svg" src={logoPortfolio} alt="logo"/>
         </div>
         <div className='links'>
             <ul>

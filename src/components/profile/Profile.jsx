@@ -11,10 +11,10 @@ const Profile = () => {
           <img src={profileImage} alt="profile"/>
         </div>
         <div className='profile__info__des'>
-          <h3>Lee sang yoon</h3>
+          <h3 className='title'>Lee sang yoon</h3>
           <div className='profile__info__des__link'>
-            <Link to='/'><i class='bx bxl-github' ></i></Link>
-            <Link to='/'><i class='bx bx-book-content'></i></Link>
+            <Link to='/'><i className='bx bxl-github' ></i></Link>
+            <Link to='/'><i className='bx bx-book-content'></i></Link>
           </div>
         </div>
       </div>
