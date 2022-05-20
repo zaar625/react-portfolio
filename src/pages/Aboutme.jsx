@@ -14,7 +14,7 @@ const Aboutme = () => {
             <Profile/>
             <Intro/>
           </div>
-          <div className='row__two'>
+          <div className='row__two col-md-12'>
             <Skill/>
             <Social/>
           </div>

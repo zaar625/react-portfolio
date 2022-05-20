@@ -1,3 +1,4 @@
+@use '../../scss/utils/' as *;
 .social{
     display: flex;
     flex-direction: column;
@@ -6,6 +7,10 @@
         padding-top: 1.5rem;
         display: flex;
         gap: 1rem;
+
+        @include mobile {
+            flex-wrap: wrap;
+        }
     
         .social__img {
             width: 320px;

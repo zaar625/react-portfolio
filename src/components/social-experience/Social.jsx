@@ -58,9 +58,9 @@ const Social = () => {
   // console.log(index)
 
   return (
-    <div className='social col-7 cardstyle'>
+    <div className='social col-7 col-md-12 cardstyle'>
       <div className="title">Social Experience</div>
-      <div className='social-container'>
+      <div className='social-container '>
         <div className='social__img'>
           <Swiper
             modules={[Navigation, Thumbs, Pagination,Autoplay ]}

@@ -1,4 +1,4 @@
-import React,{useEffect} from 'react'
+import React,{useEffect,useState} from 'react'
 import { useSelector,useDispatch } from 'react-redux'
 import ThemeAction from '../../redux/actions/ThemeAction'
 
@@ -10,7 +10,15 @@ import Aboutme from '../../pages/Aboutme'
 import Navbar from '../navbar/Navbar'
 
 
+import LoadingSpinner from '../spinner/Spinner'
+
 const MainLayout = () => {
+
+    const [isLoading, setIsLoading] = useState(true);
+    setTimeout(() => {
+        setIsLoading(false)
+    }, 3000);
+
 
     const themeReducer = useSelector(state => state.ThemeReducer)
     console.log(themeReducer)
@@ -27,8 +35,21 @@ const MainLayout = () => {
 
 
     return (
-        <BrowserRouter>
-            <div className={`main__layout ${themeReducer.mode} ${themeReducer.color}`}>
+        <BrowserRouter>  {isLoading ? <LoadingSpinner /> : 
+        ( <div className={`main__layout ${themeReducer.mode} ${themeReducer.color}`}>
+                <Sidebar />
+                <div className='main__layout__content'>
+                    <Navbar/>
+                    <div className='layout__content__main col-12 col-md-12'>
+                        <Routes>
+                            <Route path="/" element={<Aboutme />}></Route>
+                            <Route path="/portfolio" element={<Portfolio />} />
+                        </Routes>
+                    </div>
+                </div>
+            </div>)
+        }
+            {/* <div className={`main__layout ${themeReducer.mode} ${themeReducer.color}`}>
                 <Sidebar />
                 <div className='main__layout__content'>
                     <Navbar/>
@@ -39,7 +60,7 @@ const MainLayout = () => {
                         </Routes>
                     </div>
                 </div>
-            </div>
+            </div> */}
         </BrowserRouter>
         
     )

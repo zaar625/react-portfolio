@@ -60,14 +60,14 @@ export const data = {
 
 const Skill = () => {
   return (
-    <div className='skill col-5'>
+    <div className='skill col-5 col-md-12'>
       <div className='skill__chart cardstyle'>
         <div className='title'>
           Skill Chart
         </div>
         <Bar options={options} data={data} />
       </div>
-      <div className='skill__imgbox cardstyle'>
+      <div className='skill__imgbox row cardstyle'>
         {
           skillImages01.map((item,index)=>(
             <div key={index}>
@@ -77,7 +77,7 @@ const Skill = () => {
           )
         }
       </div>
-      <div className='skill__imgbox cardstyle'>
+      <div className='skill__imgbox row cardstyle'>
         {
           skillImages02.map((item,index)=>(
             <div key={index}>
