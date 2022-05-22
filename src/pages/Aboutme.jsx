@@ -1,4 +1,5 @@
-import React from 'react'
+import React,{useEffect} from 'react'
+import scrollreveal from 'scrollreveal'
 import Profile from '../components/profile/Profile'
 import Intro from '../components/intro/Intro'
 import Skill from '../components/skill/Skill'
@@ -6,6 +7,26 @@ import Social from '../components/social-experience/Social'
 
 
 const Aboutme = () => {
+  useEffect(() => {
+    const sr = scrollreveal({
+      origin: "bottom",
+      distance: "80px",
+      duration: 2000,
+      reset: false,
+    });
+    sr.reveal(
+      `
+        nav,
+        .row__one,
+        .row__two
+    `,
+      {
+        opacity: 0,
+        interval: 300,
+      }
+    );
+  }, []);
+
   return (
     // 라우터구간
     <div className='about__me'>

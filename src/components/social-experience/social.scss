@@ -106,3 +106,17 @@
         }
     }
 }
+
+
+// Swiper pagination - css
+.swiper-pagination-bullet {
+    background: var(--main-color);
+    opacity: 1;
+
+    &.swiper-pagination-bullet-active{
+        width: 30px;
+        border-radius: 1rem;
+        transition: .5s width;
+    }
+}
+

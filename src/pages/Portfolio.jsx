@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from 'react'
+import ProjectSwiper from '../components/project/ProjectSwiper';
 import LoadingSpinner from '../components/spinner/Spinner';
 
 const Portfolio = () => {
@@ -13,18 +14,13 @@ const Portfolio = () => {
     setTimeout(()=>{
       SetLoadingSpinner(false)
     },800)
-
-    return () => {
-      console.log('컴포넌트가 화면에서 사라짐');
-    };
   },[])
  
-  console.log(loadingSpinner)
 
   return (
-    <div>
+    <div className='portfolio-conatainer'>
       {
-        loadingSpinner === true ? <LoadingSpinner/> : 'hello'
+        loadingSpinner === true ? <LoadingSpinner/> : <ProjectSwiper/>
       }
     </div>
   )

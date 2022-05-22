@@ -1,4 +1,5 @@
-import React ,{useState}from 'react'
+import React ,{useState, useEffect}from 'react'
+import scrollreveal from 'scrollreveal'
 import { Link, useLocation } from 'react-router-dom'
 import logoLee from '../../assets/images/Lee.svg'
 import logoPortfolio from '../../assets/images/portfolio.svg'
@@ -16,6 +17,31 @@ const Sidebar = () => {
   const NavActive = navbarState;
   const html = document.querySelector("html");
   html.addEventListener("click", () => setNavbarState(false));
+
+  // scrollreveal
+  useEffect(() => {
+    const sr = scrollreveal({
+      origin: "left",
+      distance: "80px",
+      duration: 1000,
+      reset: false,
+    });
+
+    sr.reveal(
+      `
+      .logo,
+      .links>ul>li:nth-of-type(1),
+      .links>ul>li:nth-of-type(2),
+      .links>ul>li:nth-of-type(3),
+      .links>ul>li:nth-of-type(4)
+
+      `,
+      {
+        opacity: 0,
+        interval: 300,
+      }
+    );
+  }, []);
 
   return (
     <>
@@ -83,23 +109,25 @@ export const ResponsiveNav = (props) =>{
   const activeItem = sidebarNav.findIndex(item => item.link === location.pathname)
 
   return(
-    <div className={`responsive__nav col-sm-7  ${props.NavActive ? '' : 'navActive'}`}>
-      {props.children}
-      <div className='responsive__nav__links'>
-            <ul>
-            {
-              sidebarNav.map((nav, index) => (
-              <SidebarItem
-                index={index}
-                link={nav.link}
-                icon={nav.icon}
-                text={nav.text}
-                active={index === activeItem}
-                key={index}
-              />
-              ))
-            }   
-            </ul>
+    <div className={`responsive-nav col-sm-7  ${props.NavActive ? '' : 'navActive'}`}>
+      <div className='responsive-nav__container'>
+        {props.children}
+        <div className='responsive-nav__links'>
+              <ul>
+              {
+                sidebarNav.map((nav, index) => (
+                <SidebarItem
+                  index={index}
+                  link={nav.link}
+                  icon={nav.icon}
+                  text={nav.text}
+                  active={index === activeItem}
+                  key={index}
+                />
+                ))
+              }   
+              </ul>
+        </div>
       </div>
     </div>
     

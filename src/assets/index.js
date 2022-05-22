@@ -24,3 +24,12 @@ export const experience = [
     require('./images/social/mein.jpg'),
     require('./images/social/zara.jpg'),
 ]
+
+export const projectImages = [
+    require('./images/project/giay01.jpg'),
+    require('./images/project/giay02.jpg'),
+    require('./images/project/giay03.jpg'),
+    require('./images/project/giay04.jpg'),
+    require('./images/project/giay05.jpg'),
+    require('./images/project/giay06.jpg')
+]
