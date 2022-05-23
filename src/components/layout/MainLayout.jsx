@@ -11,6 +11,7 @@ import Navbar from '../navbar/Navbar'
 
 
 import LoadingSpinner from '../spinner/Spinner'
+import Contact from '../../pages/Contact'
 
 const MainLayout = () => {
 
@@ -39,11 +40,12 @@ const MainLayout = () => {
         ( <div className={`main__layout ${themeReducer.mode} ${themeReducer.color}`}>
                 <Sidebar />
                 <div className='main__layout__content'>
-                    <Navbar/>
+                    {/* <Navbar/> */}
                     <div className='layout__content__main col-12 col-md-12'>
                         <Routes>
                             <Route path="/" element={<Aboutme />}></Route>
                             <Route path="/portfolio" element={<Portfolio />} />
+                            <Route path="/contact" element={<Contact />} />
                         </Routes>
                     </div>
                 </div>

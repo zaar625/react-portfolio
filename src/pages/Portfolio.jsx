@@ -1,5 +1,6 @@
 
 import React, { useEffect, useState } from 'react'
+import Navbar from '../components/navbar/Navbar';
 import ProjectSwiper from '../components/project/ProjectSwiper';
 import LoadingSpinner from '../components/spinner/Spinner';
 
@@ -18,11 +19,14 @@ const Portfolio = () => {
  
 
   return (
-    <div className='portfolio-conatainer'>
-      {
-        loadingSpinner === true ? <LoadingSpinner/> : <ProjectSwiper/>
-      }
-    </div>
+    <>
+      <Navbar item={['반갑습니다.']}/>
+      <div className='portfolio-conatainer cardstyle'>
+        {
+          loadingSpinner === true ? <LoadingSpinner/> : <ProjectSwiper/>
+        }
+      </div>
+    </>
   )
 }
 

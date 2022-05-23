@@ -1,8 +1,9 @@
-import React, {useState} from 'react'
+import React, {useState, useEffect} from 'react'
 import {Swiper ,SwiperSlide} from 'swiper/react'
 import { Thumbs,Navigation } from 'swiper'
-import { projectImages } from '../../assets'
-import { project_description } from '../../configs/sidebarNav'
+import scrollreveal from 'scrollreveal'
+import { projectImages ,projectSmallImages} from '../../assets'
+import { project_description} from '../../configs/sidebarNav'
 
 import 'swiper/css'
 import 'swiper/css/navigation'
@@ -11,33 +12,53 @@ import './project-swiper.scss'
 import { Link } from 'react-router-dom'
 
 const ProjectSwiper = () => {
+
+  useEffect(() => {
+    const sr = scrollreveal({
+      origin: "left",
+      distance: "200px",
+      duration: 3000,
+      reset: false,
+    });
+    sr.reveal(
+      `
+        .project-swiper__img
+      `,
+      {
+        opacity: 0,
+        interval: 300,
+      }
+    );
+  }, []);
+
   const [activeThumb, setActiveThumb] = useState()
   const [index, setIndex] = useState(0);
   console.log(index)
   return (
     <>
-      <div className='project-swiper col-7 cardstyle'>
-      <div className='project-swiper__left col-10'>
-        <Swiper
-            loop={false}
-            spaceBetween={10}
-            navigation={true}
-            modules={[Navigation, Thumbs]}
-            grabCursor={true}
-            thumbs={{ swiper: activeThumb }}
-            className='product-images-slider'
-            onSlideChange={(index)=>setIndex(index.realIndex)}
-        >
-            {
-              projectImages.map((item, index) => (
-                    <SwiperSlide key={index}>
-                        <img src={item} alt="product images" />
-                    </SwiperSlide>
-                ))
-            }
-        </Swiper>
-        <div>{index + 1}/{projectImages.length}</div>
-      </div>
+      <div className='project-swiper__img col-6 '>
+        <div className='project-swiper__img__box col-9'>
+          <h1>Personal Portfolio</h1>
+          <Swiper
+              loop={false}
+              spaceBetween={10}
+              navigation={false}
+              modules={[Navigation,Thumbs]}
+              grabCursor={true}
+              thumbs={{ swiper: activeThumb }}
+              className='project-images-slider'
+              onSlideChange={(index)=>setIndex(index.realIndex)}
+          >
+              {
+                projectImages.map((item, index) => (
+                      <SwiperSlide key={index}>
+                          <img src={item} alt="product images" />
+                      </SwiperSlide>
+                  ))
+              }
+          </Swiper>
+          <div className='pageNav'>{index + 1}/{projectImages.length}</div>
+        </div>
         <Swiper
             onSwiper={setActiveThumb}
             loop={false}
@@ -45,10 +66,10 @@ const ProjectSwiper = () => {
             spaceBetween={10}
             slidesPerView={4}
             modules={[Navigation, Thumbs]}
-            className='product-images-slider-thumbs col-2'
+            className='project-images-slider-thumbs col-2'
         >
             {
-              projectImages.map((item, index) => (
+              projectSmallImages.map((item, index) => (
                     <SwiperSlide key={index}>
                         <div className="product-images-slider-thumbs-wrapper">
                             <img src={item} alt="product images" />
@@ -66,38 +87,69 @@ const ProjectSwiper = () => {
 }
 
 const ProjectDescription = (props) => {
-  const projdectIndex = project_description[props.index]
-  return (
-    <div className='ProjectDescription'>
-      <div className='ProjectDescription__bg' style={{backgroundImage:`url(${projdectIndex.bg})`}}>
-      </div>
+
+  useEffect(() => {
+    const sr = scrollreveal({
+      origin: "right",
+      distance: "200px",
+      duration: 3000,
+      reset: false,
+    });
+
+    sr.reveal(
+      `
+      .ProjectDescription__content__intro,
+      .ProjectDescription__content__skills,
+      .ProjectDescription__content__fuc
+      `,
       {
-        projdectIndex !== undefined ? 
-          (
-          <div className='ProjectDescription__content'>
-            <h2 className ='title'>{projdectIndex.title}</h2>
-            <p>{projdectIndex.des}</p>
-            <div className='ProjectDescription__content__skill'>
-              
-              {projdectIndex.skill.map((item, index)=>(<span key={index}>{item}</span>))}
-             
-            </div>
-            {
-              projdectIndex.fuc.map((item , index) => (
-                <div>
-                  <h3><i class='bx bx-check'></i>{item.title}</h3>
-                  <p>{item.des}</p>
-                </div>
-              ))
-            }
-            <div>
-              <Link to='/'>Github <i class='bx bx-right-arrow-alt' ></i></Link>
-              <Link to='/'>View Site <i class='bx bx-right-arrow-alt' ></i></Link>
-            </div>
-          </div>
-        ) : '로딩중'
+        opacity: 0,
+        interval: 300,
       }
-    </div>
+    );
+  }, []);
+
+
+
+  const projdectIndex = project_description[props.index];
+  console.log(projdectIndex)
+  return (
+    <>
+      <div className='ProjectDescription'>
+        {
+          projdectIndex !== undefined ? 
+            (
+            <div className='ProjectDescription__content'>
+              <div className='ProjectDescription__content__intro'>
+                <h2 className =''>{projdectIndex.title}</h2>
+                <p>{projdectIndex.des}</p>
+              </div>
+              <div className='ProjectDescription__content__skills'>
+                <h4>Use Skill</h4>
+                <div>
+                  {projdectIndex.skill.map((item, index)=>(<span key={index}>{item}</span>))}
+                </div>
+              </div>
+              <div className='ProjectDescription__content__fuc'>
+                <h4>Detail</h4>
+                {
+                  projdectIndex.fuc.map((item , index) => (
+                    <div key={index}>
+                      <h4><i className='bx bx-check-square'></i>{item.title}</h4>
+                      <p>{item.des}</p>
+                    </div>
+                  ))
+                }
+              </div>
+              <div className='ProjectDescription__content__links'>
+                <Link to='/'>Github <i class='bx bx-right-arrow-alt' ></i></Link>
+                <Link to='/'>View Site <i class='bx bx-right-arrow-alt' ></i></Link>
+              </div>
+            </div>
+          ) : '로딩중'
+        }
+      </div>
+    </>
   )
 }
 

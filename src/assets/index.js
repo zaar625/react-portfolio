@@ -26,10 +26,18 @@ export const experience = [
 ]
 
 export const projectImages = [
-    require('./images/project/giay01.jpg'),
-    require('./images/project/giay02.jpg'),
-    require('./images/project/giay03.jpg'),
-    require('./images/project/giay04.jpg'),
-    require('./images/project/giay05.jpg'),
-    require('./images/project/giay06.jpg')
+    require('./images/project/bbyb.jpg'),
+    require('./images/project/movie.jpg'),
+    require('./images/project/interactive.jpg'),
+    require('./images/project/plant.jpg'),
+    require('./images/project/basic.jpg'),
+]
+
+
+export const projectSmallImages = [
+    require('./images/project/bbyb-s.jpg'),
+    require('./images/project/movie-s.jpg'),
+    require('./images/project/interactive-s.jpg'),
+    require('./images/project/plant-s.jpg'),
+    require('./images/project/basic-s.jpg'),
 ]
