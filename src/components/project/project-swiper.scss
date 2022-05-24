@@ -82,6 +82,7 @@
             div {
                 display: flex;
                 gap: 1rem;
+                flex-wrap: wrap;
                 
                 & > span {
                     background-color: var(--main-bg);

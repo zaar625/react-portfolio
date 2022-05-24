@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react'
+import './contactmap.scss'
 
 const ContactMap = () => {
   const { kakao } = window;
@@ -41,8 +42,8 @@ infowindow.open(map, marker);
 
 
   return (
-    <div>
-      <div id="map" style={{width:"100%", height:"400px"}}></div> 
+    <div className='map2'>
+      <div className='map' id="map"></div> 
     </div>
   )
 }

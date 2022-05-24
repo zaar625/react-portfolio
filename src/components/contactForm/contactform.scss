@@ -1,4 +1,8 @@
 @use '../../scss/utils/' as *;
+.contact-form {
+  margin: auto;
+}
+
 .form-group {
     width: 100%;
     margin-bottom: 1rem;
@@ -12,7 +16,7 @@
     font-size: 0.825rem;
     padding: 1.2rem;
     color: var(--gray-1);
-    background-color: black;
+    background-color: var(--main-bg);
     outline: none;
     border: none;
     border-radius: 8px;
@@ -23,8 +27,8 @@
     resize: vertical;
   }
   button[type='submit'] {
-    background-color: gray;
-    color: var(--black);
+    background-color: var(--main-bg);
+    color: var(--txt-color);
     font-size: 1rem;
     display: inline-block;
     outline: none;

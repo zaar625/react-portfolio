@@ -15,8 +15,8 @@ const Sidebar = () => {
 
   const [navbarState, setNavbarState] = useState(false);
   const NavActive = navbarState;
-  const html = document.querySelector("html");
-  html.addEventListener("click", () => setNavbarState(false));
+  // const html = document.querySelector("html");
+  // html.addEventListener("click", () => setNavbarState(false));
 
   // scrollreveal
   useEffect(() => {
@@ -53,7 +53,7 @@ const Sidebar = () => {
           </div>
           <div className='toggle'>
             {
-              navbarState ? (<i className='bx bx-menu' onClick={() => setNavbarState(false)}></i>) : <i className='bx bx-x' onClick={(e) => {
+              navbarState ? (<i className='bx bx-x' onClick={() => setNavbarState(false)}></i>) : <i className='bx bx-menu' onClick={(e) => {
                   e.stopPropagation();
                   setNavbarState(true);
                 }}></i>
@@ -109,7 +109,7 @@ export const ResponsiveNav = (props) =>{
   const activeItem = sidebarNav.findIndex(item => item.link === location.pathname)
 
   return(
-    <div className={`responsive-nav col-sm-7  ${props.NavActive ? '' : 'navActive'}`}>
+    <div className={`responsive-nav col-md-4 col-sm-7  ${props.NavActive ? 'navActive' : ''}`}>
       <div className='responsive-nav__container'>
         {props.children}
         <div className='responsive-nav__links'>

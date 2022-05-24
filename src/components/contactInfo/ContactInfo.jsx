@@ -1,9 +1,9 @@
 import React from 'react'
-import './contact.scss'
+import './contactInfo.scss'
 
 const ContactInfo = () => {
   return (
-    <div className='contact-info col-10'>
+    <div className='contact-info col-8 col-sm-12'>
         <div className='contact-info__phone cardstyle'>
             <span className='round'><i class='bx bxs-phone'></i></span>
             <span>+1040082360</span>

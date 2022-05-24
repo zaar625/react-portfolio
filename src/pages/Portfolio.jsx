@@ -21,7 +21,7 @@ const Portfolio = () => {
   return (
     <>
       <Navbar item={['반갑습니다.']}/>
-      <div className='portfolio-conatainer cardstyle'>
+      <div className='portfolio-conatainer col-md-12 cardstyle'>
         {
           loadingSpinner === true ? <LoadingSpinner/> : <ProjectSwiper/>
         }

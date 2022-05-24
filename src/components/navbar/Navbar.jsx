@@ -30,7 +30,7 @@ console.log(location)
 // user (nav__right)
 export const NavbarUser = ()=>{
   return(
-    <div className='navbar__user col-2 col-sm-12'>
+    <div className='navbar__user col-2 col-md-12'>
       <div className='navbar__user__top'>
         <div className='navbar__user__top__user-img'>
           <img src={me} alt='me img'/>

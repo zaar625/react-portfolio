@@ -16,7 +16,7 @@ const ProjectSwiper = () => {
   useEffect(() => {
     const sr = scrollreveal({
       origin: "left",
-      distance: "200px",
+      distance: "100px",
       duration: 3000,
       reset: false,
     });
@@ -36,7 +36,7 @@ const ProjectSwiper = () => {
   console.log(index)
   return (
     <>
-      <div className='project-swiper__img col-6 '>
+      <div className='project-swiper__img col-6 col-md-12 '>
         <div className='project-swiper__img__box col-9'>
           <h1>Personal Portfolio</h1>
           <Swiper
@@ -79,7 +79,7 @@ const ProjectSwiper = () => {
             }
         </Swiper>
       </div>
-      <div className='col-5'>
+      <div className='col-5 col-md-12'>
         <ProjectDescription index={index}/>
       </div>
     </>
@@ -91,7 +91,7 @@ const ProjectDescription = (props) => {
   useEffect(() => {
     const sr = scrollreveal({
       origin: "right",
-      distance: "200px",
+      distance: "100px",
       duration: 3000,
       reset: false,
     });

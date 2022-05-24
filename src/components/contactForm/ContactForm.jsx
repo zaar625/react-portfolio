@@ -6,7 +6,7 @@ const ContactForm = () => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
   return (
-    <div className='contact-form col-10 cardstyle'>
+    <div className='contact-form col-8 col-sm-12 cardstyle'>
         <div className="form-group">
             <label htmlFor="name">
                 Your Name
