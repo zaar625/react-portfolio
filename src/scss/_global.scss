@@ -33,12 +33,32 @@ ul,
 li {
   list-style-type: none;
 }
+
 button {
   cursor: pointer;
   background-color: transparent;
   border: 0;
   outline: 0;
   color:white;
+}
+
+input::-webkit-input-placeholder {
+  font-family: 'Montserrat', sans-serif;
+}
+input:-ms-input-placeholder {
+  font-family: 'Montserrat', sans-serif;
+}
+textarea::-webkit-input-placeholder {
+  font-family: 'Montserrat', sans-serif;
+}
+textarea:-ms-input-placeholder {
+  font-family: 'Montserrat', sans-serif;
+}
+input::placeholder {
+  font-family: 'Montserrat', sans-serif;
+}
+textarea::placeholder {
+  font-family: 'Montserrat', sans-serif;
 }
 
 

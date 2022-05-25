@@ -1,5 +1,6 @@
 import React, {useEffect}from 'react'
 import scrollreveal from 'scrollreveal'
+import Comment from '../components/comment/Comment'
 import ContactForm from '../components/contactForm/ContactForm'
 import ContactInfo from '../components/contactInfo/ContactInfo'
 import ContactMap from '../components/map/ContactMap'
@@ -41,9 +42,10 @@ const Contact = () => {
                     <ContactForm/>
                 </div>
             </div>
-            <div className='contact__bottom col-12 cardstyle'>
-                <ContactMap/>
-            </div>
+        </div>
+        <Comment/>
+        <div className='contact__bottom col-12 cardstyle'>
+            <ContactMap/>
         </div>
       </>
   )

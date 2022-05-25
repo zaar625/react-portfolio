@@ -13,7 +13,7 @@ const ContactInfo = () => {
             <span>zaar625@naver.com</span>
         </div>
         <div className='contact-info__live cardstyle'>
-            <span className='round'><i class='bx bxs-map'></i></span>
+            <span className='round'><i className='bx bxs-map'></i></span>
             <span>Gwanak / Seoul</span>
         </div>
     </div>

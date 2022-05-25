@@ -1,8 +1,6 @@
 import React ,{useState, useEffect}from 'react'
 import scrollreveal from 'scrollreveal'
 import { Link, useLocation } from 'react-router-dom'
-import logoLee from '../../assets/images/Lee.svg'
-import logoPortfolio from '../../assets/images/portfolio.svg'
 import sidebarNav from '../../configs/sidebarNav'
 import { NavbarUser } from '../navbar/Navbar'
 import {LogoLee, LogoPortfolio } from '../logo-sgv/Logo'
