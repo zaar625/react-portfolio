@@ -12,7 +12,7 @@ const sidebarNav = [
         text:'SY Portfolio'
     },
     {
-        link:'/project',
+        link:'/mini',
         icon:<i className='bx bx-image-add' ></i>,
         text:'SY Mini Project'
     },

@@ -1,10 +1,30 @@
-import React from 'react'
+import React, {useEffect}from 'react'
+import scrollreveal from 'scrollreveal'
 import ContactForm from '../components/contactForm/ContactForm'
 import ContactInfo from '../components/contactInfo/ContactInfo'
 import ContactMap from '../components/map/ContactMap'
 import Navbar from '../components/navbar/Navbar'
 
 const Contact = () => {
+    useEffect(() => {
+        const sr = scrollreveal({
+            origin: "top",
+            distance: "80px",
+            duration: 2000,
+            reset: false,
+        });
+        sr.reveal(
+        `
+            .contact__header,
+            .contact__left,
+            .contact__right
+        `,
+          {
+            opacity: 0,
+            interval: 300,
+          }
+        );
+      }, []);
   return (
       <>
         <Navbar/>

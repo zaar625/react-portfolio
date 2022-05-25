@@ -1,7 +1,7 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
 import './profile.scss'
-import profileImage from '../../assets/images/profile.jpeg'
+import profileImage from '../../assets/images/me.jpg'
 
 const Profile = () => {
   return (

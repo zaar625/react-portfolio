@@ -52,13 +52,6 @@
             align-items: center;
             gap: 2rem;
             
-        
-            &__lee {
-                position: absolute;
-                left: 0;
-                top: -30px;
-                
-            }
             @include tablet{
                 gap: 1rem;
                 justify-content: flex-start;

@@ -19,8 +19,8 @@ ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
       <MainLayout/>
-      <Pop/>
-    </React.StrictMode>,
+      {/* <Pop/> */}
+    </React.StrictMode>
   </Provider>,
   document.getElementById('root')
 );

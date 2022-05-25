@@ -5,7 +5,10 @@ import logoLee from '../../assets/images/Lee.svg'
 import logoPortfolio from '../../assets/images/portfolio.svg'
 import sidebarNav from '../../configs/sidebarNav'
 import { NavbarUser } from '../navbar/Navbar'
+import {LogoLee, LogoPortfolio } from '../logo-sgv/Logo'
 import './sidebar.scss'
+
+
 
 
 const Sidebar = () => {
@@ -15,8 +18,6 @@ const Sidebar = () => {
 
   const [navbarState, setNavbarState] = useState(false);
   const NavActive = navbarState;
-  // const html = document.querySelector("html");
-  // html.addEventListener("click", () => setNavbarState(false));
 
   // scrollreveal
   useEffect(() => {
@@ -48,8 +49,8 @@ const Sidebar = () => {
       <div className='slidebar col-2 col-md-12'>
         <div className='top'>
           <div className='logo'>
-            <img className="logo__lee" src={logoLee} alt="" />
-            <img className="logo__svg" src={logoPortfolio} alt="logo"/>
+            <LogoLee/>
+            <LogoPortfolio/>
           </div>
           <div className='toggle'>
             {

@@ -33,7 +33,6 @@ const ProjectSwiper = () => {
 
   const [activeThumb, setActiveThumb] = useState()
   const [index, setIndex] = useState(0);
-  console.log(index)
   return (
     <>
       <div className='project-swiper__img col-6 col-md-12 '>
@@ -109,10 +108,8 @@ const ProjectDescription = (props) => {
     );
   }, []);
 
-
-
   const projdectIndex = project_description[props.index];
-  console.log(projdectIndex)
+ 
   return (
     <>
       <div className='ProjectDescription'>
@@ -142,8 +139,8 @@ const ProjectDescription = (props) => {
                 }
               </div>
               <div className='ProjectDescription__content__links'>
-                <Link to='/'>Github <i class='bx bx-right-arrow-alt' ></i></Link>
-                <Link to='/'>View Site <i class='bx bx-right-arrow-alt' ></i></Link>
+                <Link to='/'>Github <i className='bx bx-right-arrow-alt' ></i></Link>
+                <Link to='/'>View Site <i className='bx bx-right-arrow-alt' ></i></Link>
               </div>
             </div>
           ) : '로딩중'

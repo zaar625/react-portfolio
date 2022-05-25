@@ -1,17 +1,17 @@
 import React,{useEffect,useState} from 'react'
 import { useSelector,useDispatch } from 'react-redux'
+import { BrowserRouter,Route,Routes } from 'react-router-dom'
 import ThemeAction from '../../redux/actions/ThemeAction'
 
-import Sidebar from '../sidebar/Sidebar'
 import './main-layout.scss'
+import Sidebar from '../sidebar/Sidebar'
 import Portfolio from '../../pages/Portfolio'
-import { BrowserRouter,Route,Routes } from 'react-router-dom'
 import Aboutme from '../../pages/Aboutme'
-import Navbar from '../navbar/Navbar'
+import Contact from '../../pages/Contact'
+import Mini from '../../pages/Mini'
 
 
 import LoadingSpinner from '../spinner/Spinner'
-import Contact from '../../pages/Contact'
 
 const MainLayout = () => {
 
@@ -22,13 +22,11 @@ const MainLayout = () => {
 
 
     const themeReducer = useSelector(state => state.ThemeReducer)
-    console.log(themeReducer)
     const dispatch = useDispatch()
 
     useEffect(() => {
         const themeClass = localStorage.getItem('themeMode', 'theme-mode-light')
         const colorClass = localStorage.getItem('colorMode', 'theme-mode-light')
-        console.log(themeClass,colorClass)
         dispatch(ThemeAction.setMode(themeClass))
         dispatch(ThemeAction.setColor(colorClass))
 
@@ -45,24 +43,13 @@ const MainLayout = () => {
                         <Routes>
                             <Route path="/" element={<Aboutme />}></Route>
                             <Route path="/portfolio" element={<Portfolio />} />
+                            <Route path="/mini" element={<Mini />} />
                             <Route path="/contact" element={<Contact />} />
                         </Routes>
                     </div>
                 </div>
             </div>)
         }
-            {/* <div className={`main__layout ${themeReducer.mode} ${themeReducer.color}`}>
-                <Sidebar />
-                <div className='main__layout__content'>
-                    <Navbar/>
-                    <div className='layout__content__main col-12'>
-                        <Routes>
-                            <Route path="/" element={<Aboutme />}></Route>
-                            <Route element={<Portfolio />} />
-                        </Routes>
-                    </div>
-                </div>
-            </div> */}
         </BrowserRouter>
         
     )
