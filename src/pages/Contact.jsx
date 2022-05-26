@@ -17,8 +17,10 @@ const Contact = () => {
         sr.reveal(
         `
             .contact__header,
-            .contact__left,
-            .contact__right
+            .contact__info__left,
+            .contact__info__right,
+            .contact__comment,
+            .contact__footer
         `,
           {
             opacity: 0,
@@ -27,27 +29,28 @@ const Contact = () => {
         );
       }, []);
   return (
-      <>
+    <div className='contact'>
         <Navbar/>
-        <div className='contact'>
-            <div className='contact__header'>
-                <p>get in touch</p>
-                <h1>Contact</h1>
+        <div className='contact__header'>
+            <p>get in touch</p>
+            <h1>Contact</h1>
+        </div>
+        <div className='contact__info'>
+            <div className='contact__info__left col-6 col-md-12 '>
+                <ContactInfo/>
             </div>
-            <div className='contact__top'>
-                <div className='contact__left col-6 col-md-12 '>
-                    <ContactInfo/>
-                </div>
-                <div className='contact__right col-6 col-md-12 '>
-                    <ContactForm/>
-                </div>
+            <div className='contact__info__right col-6 col-md-12 '>
+                <ContactForm/>
             </div>
         </div>
-        <Comment/>
-        <div className='contact__bottom col-12 cardstyle'>
+        <div className='contact__comment'>
+            <Comment/>
+        </div>
+        <div className='contact__footer col-12 cardstyle'>
             <ContactMap/>
         </div>
-      </>
+    
+    </div>
   )
 }
 

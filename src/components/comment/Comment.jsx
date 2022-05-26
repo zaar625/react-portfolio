@@ -6,25 +6,27 @@ const Comment = () => {
     const input = useRef(null)//인풋 초기화
     
     const date = new Date();
-    
+    console.log(date)
     const [userData, setUserData] = useState([]);//유저 게시글 객체들 집합
     
     const [blogItem, setBlogItem] = useState({
     user:'',
     content:'',
-    data:date.getTime(),
+    date:`${date.getFullYear()}.${date.getMonth() + 1}.${date.getDate()}`,
+    time:date.getTime()
     });  //input value저장  
+    console.log(blogItem.data)
     
     const limit = 5 //페이지당 게시글 수 초기 값
     
-    const [dataShow, setDataShow] = useState([])
-    console.log(dataShow)
+    const [dataShow, setDataShow] = useState([]);//페이지당 보여질 데이터
+    const [dataId, setDataId] = useState([]);//
 
-    let pages = 1
+    let pages = 1 //총 페이지 수 변수
 
-    let range = []
+    let range = [] //페이지 숫자 map사용하기 위한 배열 
 
-    const [currPage, setCurrPage] = useState(0)
+    const [currPage, setCurrPage] = useState(0)//현재페이지일경우 css 변화
 
     const selectPage = page => {
         const start = Number(limit) * page
@@ -33,7 +35,7 @@ const Comment = () => {
         setDataShow(userData.slice(start, end))
 
         setCurrPage(page)
-    }
+    }//페이지 클릭시 보일 아이템
 
     if (limit !== undefined) {
         let page = Math.floor(userData.length / Number(limit))//0
@@ -45,13 +47,17 @@ const Comment = () => {
         // 마운트 되면 파이어베이스 데이터 받아오기
         const postData = async()=>{
             let PostData = [];
+            let PostDataId =[]; //파이어베이스 해당 컬렉션의 각각의 문서의 아이디가져오기
 
             const data = await db.collection('userCard').get()
             data.forEach((doc)=>{
-                PostData.push(doc.data())
+                PostData.push(doc.data());
+                PostDataId.push(doc.id);
             })
-            setUserData(PostData)
-            setDataShow(PostData.slice(0, Number(limit)))
+            PostData.sort((a, b) => a.time < b.time ? 1 : (a.time > b.time ? -1 : 0))//올린 시간순으로 정렬
+            setUserData(PostData);
+            setDataId(PostDataId);
+            setDataShow(PostData.slice(0, Number(limit)));
         }
         postData();
     },[])
@@ -65,16 +71,35 @@ const Comment = () => {
     }
     //파이어베이스에 업로드하기
     const Upload =()=>{
-        db.collection("userCard").add(blogItem)
-        .then((result) => {
-            alert('성공하였습니다.')
-            input.current.value =null;
-            })
-            .catch((error)=>{
-            alert('실패')
-            })
+        if(blogItem.user === ''){
+            alert('유저이름을 써주세요~^^')
+            return false
+        }
+        if(blogItem.content === ''){
+            alert('내용을 입력해주세요~')
+            return false
+        }
+
+        if(blogItem !== ''){
+            db.collection("userCard").add(blogItem)
+            .then((result) => {
+                alert('성공하였습니다.')
+                input.current.value =null;
+                })
+                .catch((error)=>{
+                alert('실패')
+                })
+        }
     }
 
+      //firebase 데이터 삭제
+    const ItemDelete = (index) => {
+        if (window.confirm('해당 게시물을 삭제하시겠습니까?')) {
+            db.collection('userCard').doc(`${dataId[index]}`).delete().then(() => {
+                alert('삭제되었습니다')
+            })
+        }
+    }
 
     return (
         <div className='comment cardstyle col-12'>
@@ -83,28 +108,28 @@ const Comment = () => {
                 <div></div>
             </div>
             <div className='comment__write col-12'>
-                <div className='comment__write__user col-2'>
-                    <input ref={input} name="user" onChange={onChange} type="text" placeholder="User Name" id="user"/>
+                <div className='comment__write__user col-2 col-sm-12'>
+                    <input ref={input} name="user" onChange={onChange} type="text" placeholder="User Name" />
                     <label>title</label>
                 </div>
-                <div className='comment__write__comment col-5'>
-                    <textarea  name="content" type="text" onChange={onChange}  placeholder="Write  your comment" id="content"/>
+                <div className='comment__write__comment col-5 col-sm-12'>
+                    <textarea  name="content" type="text" onChange={onChange}  placeholder="Write  your comment" />
                     <label>comment</label>
                 </div>
-                <button className='comment__write__send col-1' id="send" onClick={Upload}>
-                    <i class='bx bx-send'></i>
+                <button className='comment__write__send col-1' onClick={Upload}>
+                    <i className='bx bx-send'></i>
                 </button>
             </div>
             <div className='comment__show'>
             {//유저 게시글 가져오기
-                dataShow.map((item, index) => ( <CommentView item={item} key={index}/>))
+                dataShow.map((item, index) => ( <CommentView item={item} key={index} ItemDelete={()=>ItemDelete(index)}/>))
             }
             </div>
             <div className='comment__pagination'>
                 {
                     pages >= 1 ? 
                         range.map((item, index) => (
-                            <div key={index} className={`comment__pagination-item ${currPage === index ? 'active' : ''}`} onClick={() => selectPage(index)}>
+                            <div key={index} className={`comment__pagination__item ${currPage === index ? 'active' : ''}`} onClick={() => selectPage(index)}>
                                 {item + 1}
                             </div>
                         ))
@@ -117,14 +142,16 @@ const Comment = () => {
 
 const CommentView = (props) =>{
     return (
-        <div className='commentView col-2'>
+        <div className='commentView col-2 col-md-4 col-sm-12'>
             <div className='commentView__header'>
                 <div className='commentView__header__userName'>{props.item.user}</div>
-                <div className='commentView__header__date'>2022.05.25</div>
+                <div className='commentView__header__date'>{props.item.date}</div>
             </div>
             <div className='line'></div>
-            <div className='commentView__content'>{props.item.content}</div>
-            <span className='commentView__footer'>Delete</span>
+            <div className='commentView__content'>
+                <p>{props.item.content}</p>
+            </div>
+            <span className='commentView__footer' onClick={props.ItemDelete}>Delete</span>
         </div>
     )
 }

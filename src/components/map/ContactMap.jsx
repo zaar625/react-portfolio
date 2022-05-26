@@ -1,4 +1,5 @@
 import React, {useEffect} from 'react'
+
 import './contactmap.scss'
 
 const ContactMap = () => {
@@ -7,42 +8,54 @@ const ContactMap = () => {
   useEffect(()=>{
     var container = document.getElementById('map');
     var options = {
-      center: new kakao.maps.LatLng(37.365264512305174, 127.10676860117488),
+      center: new kakao.maps.LatLng(37.475875, 126.976887),
       level: 3,
       scrollwheel:false
     };
-    var imageSrc = 'https://t1.daumcdn.net/localimg/localimages/07/mapapidoc/marker_red.png', // 마커이미지의 주소입니다    
-    imageSize = new kakao.maps.Size(64, 69), // 마커이미지의 크기입니다
-    imageOption = {offset: new kakao.maps.Point(27, 69)}; 
+    // 마커이미지 가져오기 
+    var imageSrc = require('../../assets/images/map-solid-24.png'), // 마커이미지의 주소
+    imageSize = new kakao.maps.Size(30 , 30), // 마커이미지의 크기
+    imageOption = {offset: new kakao.maps.Point(27, 69)}; //마커의 좌표와 일치시킬 이미지 안에서의 좌표를 설정
+
     var map = new kakao.maps.Map(container, options);
     var markerImage = new kakao.maps.MarkerImage(imageSrc, imageSize, imageOption);
-    var markerPosition  = new kakao.maps.LatLng(37.365264512305174, 127.10676860117488); 
+    var markerPosition  = new kakao.maps.LatLng(37.475875, 126.976887); //마커가 표시될 위치
+    
+    // 마커생성
     var marker = new kakao.maps.Marker({
       position: markerPosition,
       image: markerImage
-   });
-
+    });
   
-  marker.setMap(map);
+    marker.setMap(map);
 
-  var iwContent = '<div style="padding:5px;">Hello World! <br><a href="https://map.kakao.com/link/map/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">큰지도보기</a> <a href="https://map.kakao.com/link/to/Hello World!,33.450701,126.570667" style="color:blue" target="_blank">길찾기</a></div>', // 인포윈도우에 표출될 내용으로 HTML 문자열이나 document element가 가능합니다
-    iwPosition = new kakao.maps.LatLng(33.450701, 126.570667); //인포윈도우 표시 위치입니다
+    var iwContent = `
+    <div style="background-color: var(--main-color); border-radius:10px;">
+      <div style="padding:10px; color:var(--txt-color); display:flex; flex-direction:column; gap:5px;">
+        <p style="font-weight:bold";>Hello! Here is me</p>
+        <p> Gwanak-gu.Seoul.Korea</p>
+      </div>
+    </div>
+    `, // 
+    iwPosition = new kakao.maps.LatLng(37.475675, 126.976785); // 표시 위치
 
-// 인포윈도우를 생성합니다
-var infowindow = new kakao.maps.InfoWindow({
-    position : iwPosition, 
-    content : iwContent 
+  // 커스텀 오버레이를 생성
+var customOverlay = new kakao.maps.CustomOverlay({
+  position: iwPosition,
+  content: iwContent,
+  xAnchor: 0.3,
+  yAnchor: 0.91
 });
-  
-// 마커 위에 인포윈도우를 표시합니다. 두번째 파라미터인 marker를 넣어주지 않으면 지도 위에 표시됩니다
-infowindow.open(map, marker); 
 
-    }, [])
+// 커스텀 오버레이를 지도에 표시합
+customOverlay.setMap(map);
+
+}, [])
     
 
 
   return (
-    <div className='map2'>
+    <div className='map-container '>
       <div className='map' id="map"></div> 
     </div>
   )

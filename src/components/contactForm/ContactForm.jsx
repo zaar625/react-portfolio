@@ -6,8 +6,8 @@ const ContactForm = () => {
     const [email, setEmail] = useState('');
     const [message, setMessage] = useState('');
   return (
-    <div className='contact-form col-8 col-sm-12 cardstyle'>
-        <div className="form-group">
+    <div className='contact__form col-8 col-sm-12 cardstyle'>
+        <div className="contact__form__group">
             <label htmlFor="name">
                 Your Name
                 <input
@@ -19,7 +19,7 @@ const ContactForm = () => {
                 />
             </label>
         </div>
-        <div className="form-group">
+        <div className="contact__form__group">
           <label htmlFor="email">
             Your Email
             <input
@@ -31,7 +31,7 @@ const ContactForm = () => {
             />
           </label>
         </div>
-        <div className="form-group">
+        <div className="contact__form__group">
             <label htmlFor="message">
                 Your message
                 <textarea

@@ -6,7 +6,8 @@
     gap: 1rem;
 
     &__header{
-        
+        color:var(--main-color);
+
         & div {
             margin-top: 20px;
             border-bottom: solid 2px rgba(85, 85, 85, 0.678);
@@ -16,26 +17,54 @@
 
     &__write{
         display: flex;
+        flex-flow: wrap;
         align-items: center;
         gap:2rem;
-
-        &__comment {
-            min-height: 50px;
-        }
 
         &__send {
             font-size: 2.5rem;
             padding-right: 4rem;
+            &:hover {
+                color: var(--main-color);
+            }
         }
         &__user > label, &__comment > label {
             position: absolute;
             clip-path: polygon(0 0, 0 0, 0 0);
+        }
+        &__user > input, &__comment > textarea {
+            height: 55px;
         }
     }
 
     &__show {
         display: flex;
         gap: 1rem;
+        flex-flow: wrap;
+    }
+
+    &__pagination {
+        display: flex;
+        gap: 1rem;
+        justify-content: flex-end;
+        align-items: center;
+        margin-right: 2rem;
+
+        &__item{
+            width: 30px;
+            height: 30px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+
+            &.active{
+                background-color: var(--main-bg);
+                color: var(--txt-color);
+                font-weight: 600;
+            }
+        }
     }
 }
 
@@ -43,6 +72,7 @@
 .commentView {
     display: flex;
     flex-direction: column;
+    justify-content: space-between;
     gap: 0.5rem;
     background-color: var(--main-bg);
     border-radius: 20px;
@@ -54,11 +84,18 @@
 
     &__header {
         display: flex;
+        flex-wrap: wrap;
         justify-content: space-between;   
+        align-items: center;
     }
     &__content {
-        min-height: 200px;
-        max-height: 300px;
+        height: 200px;
+        overflow: auto;
+        text-overflow: ellipsis;
+
+        p{
+            word-break: break-all;
+        }
     }
 
     &__footer {
@@ -67,5 +104,10 @@
         font-size: 0.825rem;
         padding: 0.5rem;
         background-color: var(--second-bg);
+        cursor: pointer;
+
+        &:hover {
+            color: var(--main-color);
+        }
     }
 }
