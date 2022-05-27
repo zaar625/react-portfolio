@@ -1,5 +1,6 @@
 import React ,{useState, useEffect}from 'react'
 import Player from './components/Player';
+import './app.scss'
 
 const ProjectOne = () => {
     const [songs, setSongs] = useState([
@@ -41,8 +42,9 @@ const ProjectOne = () => {
         }
       })
     },[currentSongIndex])
+
   return (
-    <div>
+    <div className='music cardstyle col-3 '>
       <Player 
         currentSongIndex={currentSongIndex}
         setCurrentSongIndex={setCurrentSongIndex}

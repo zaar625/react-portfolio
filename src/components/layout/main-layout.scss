@@ -57,6 +57,17 @@
     flex-wrap: wrap;
 }
 
+//mini-project
+.mini{
+    display: flex;
+    flex-direction: column;
+
+    &__container{
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
+
 // contact
 .contact{
     display: flex;
