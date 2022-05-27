@@ -8,10 +8,10 @@ const Caculate = () => {
   const expRef = useRef(null);
 
   const [expression, setExpression] = useState('');
+  console.log('expression:', expression)
 
   useEffect(()=>{
     const btns = Array.from(btnRef.current.querySelectorAll('button'));
-    console.log(btns)
     // flex로 된 가로 너비를 정사각형으로 만들어 줌
     btns.forEach(e=>e.style.height = e.offsetWidth + 'px');
   },[]);
@@ -19,13 +19,12 @@ const Caculate = () => {
   const btnClick = (item) => {
 
     const expDiv = expRef.current;
-    console.log(expDiv.parentNode)
     //숫자버튼 누르면 화면에 나타나기
     if(item.action === BTN_ACTIONS.ADD) {
       addAnimSpan(item.display);
 
       const oper = item.display !== 'x' ? item.display : '*';
-      setExpression(expression + oper);
+      setExpression(expression + oper);//string
     }
     // 'c'누르면 초기화
     if(item.action === BTN_ACTIONS.DELETE){
@@ -36,24 +35,26 @@ const Caculate = () => {
     }
     // "="누르면 할 함수
     if(item.action === BTN_ACTIONS.CALC){
+      console.log(expression.trim().length)
       if(expression.trim().length <=0) return;
 
       // alert('asdasd')
       expDiv.parentNode.querySelector('div:last-child').remove();
 
-      const cloneNode = expDiv.cloneNode(true);
+      const cloneNode = expDiv.cloneNode(true);//해당 노드의 children까지 복제
       expDiv.parentNode.appendChild(cloneNode);
 
-      const transform = `trnaslateY(${-(expDiv.offsetHeight + 10) + 'px'}') scale(0.4)`;
+      const transform = `translateY(${-(expDiv.offsetHeight + 10) + 'px'}) scale(0.4)`;
 
       try {
         let res = eval(expression);
+        console.log(res)
 
         setExpression(res.toString());
         setTimeout(() => {
-            cloneNode.style.transform = transform;
-            expDiv.innerHTML = '';
-            addAnimSpan(Math.floor(res * 100000000) / 100000000);
+          expDiv.parentNode.querySelector('div:last-child').style.transform = transform;
+          expDiv.innerHTML = '';
+          addAnimSpan(res);
         }, 200);
       } catch {
           setTimeout(() => {
@@ -85,24 +86,24 @@ const Caculate = () => {
   }
 
   return (
-    <div className='calculator'>
-      <div className='calculator__result'>
-        <div ref={expRef} className='calculator__result__exp'></div>
-        <div className='calculator__result__exp'></div>
-      </div>
-      <div ref= {btnRef}className='calculator__btns'>
-        {
-          btns.map((item, index) => (
-            <button 
-            key={index} 
-            className={item.class}
-            onClick={()=>btnClick(item)}
-            >
-              {item.display}
-            </button>
-          ))
-        }
-      </div>
+    <div className='calculator col-3 cardstyle'>
+        <div className='calculator__result'>
+          <div ref={expRef} className='calculator__result__exp'></div>
+          <div className='calculator__result__exp'></div>
+        </div>
+        <div ref= {btnRef}className='calculator__btns'>
+          {
+            btns.map((item, index) => (
+              <button 
+              key={index} 
+              className={item.class}
+              onClick={()=>btnClick(item)}
+              >
+                {item.display}
+              </button>
+            ))
+          }
+        </div>
     </div>
   )
 }

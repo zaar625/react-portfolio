@@ -3,16 +3,16 @@ import {AiOutlineFastBackward,AiOutlineFastForward,AiOutlinePlayCircle,AiOutline
 
 const PlayerControls = (props) => {
   return (
-    <div className='c-player--controls'>
-        <button className='skip-btn' onClick={()=>props.SkipSong(false)}>
+    <div className='music__controls'>
+        <button className='music__controls__skip-btn' onClick={()=>props.SkipSong(false)}>
             <AiOutlineFastBackward/>
         </button>
-        <button className='play-btn' onClick={()=>props.setIsPlaying(!props.isPlaying)}>
+        <button className='music__controls__play-btn' onClick={()=>props.setIsPlaying(!props.isPlaying)}>
         {
             props.isPlaying ? (<AiOutlinePauseCircle/>) : (  <AiOutlinePlayCircle/>)
         }
         </button>
-        <button className='skip-btn'onClick={()=>props.SkipSong(true)}>
+        <button className='music__controls__skip-btn'onClick={()=>props.SkipSong(true)}>
             <AiOutlineFastForward/>
         </button>
     </div>

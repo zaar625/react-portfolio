@@ -1,8 +1,8 @@
 import React from 'react'
 import Navbar from '../components/navbar/Navbar'
 import ProjectOne from '../components/mini-project/music/App'
-import Caculator from '../components/mini-project/calculate/App'
 import Game from '../components/mini-project/game/Game'
+import Caculate from '../components/mini-project/calculate/components/Caculate'
 
 const Mini = () => {
   return (
@@ -10,8 +10,8 @@ const Mini = () => {
       <Navbar/>
       <div className='mini__container'>
         <ProjectOne/>
-        {/* <Caculator/> */}
-        {/* <Game/> */}
+        <Caculate/>
+        <Game/>
       </div>
     </div>
   )
