@@ -44,7 +44,7 @@ const ProjectOne = () => {
     },[currentSongIndex])
 
   return (
-    <div className='music cardstyle col-3 '>
+    <div className='music cardstyle col-3 col-md-12 '>
       <Player 
         currentSongIndex={currentSongIndex}
         setCurrentSongIndex={setCurrentSongIndex}

@@ -86,7 +86,7 @@ const Caculate = () => {
   }
 
   return (
-    <div className='calculator col-3 cardstyle'>
+    <div className='calculator col-3 col-md-12 cardstyle'>
         <div className='calculator__result'>
           <div ref={expRef} className='calculator__result__exp'></div>
           <div className='calculator__result__exp'></div>

@@ -15,3 +15,6 @@ sort()
  trim()
 
  eval()
+
+   const res = data.list.filter(it => new RegExp("06:00:00","i").test(it.dt_txt))
+        console.log(res)

@@ -3,22 +3,22 @@ import Card from './Card'
 
 const Cards = () => {
     const [items, setItems] = useState([
-        { id: 1, img: require('../img/html.png'), stat: "" },
-        { id: 1, img: require('../img/html.png'), stat: "" },
-        { id: 2, img: require('../img/css.png'), stat: "" },
-        { id: 2, img: require('../img/css.png'), stat: "" },
-        { id: 3, img: require('../img/js.png'), stat: "" },
-        { id: 3, img: require('../img/js.png'), stat: "" },
-        { id: 4, img: require('../img/scss.png'), stat: "" },
-        { id: 4, img: require('../img/scss.png'), stat: "" },
-        { id: 5, img: require('../img/react.png'), stat: "" },
-        { id: 5, img: require('../img/react.png'), stat: "" },
-        { id: 6, img: require('../img/vue.png'), stat: "" },
-        { id: 6, img: require('../img/vue.png'), stat: "" },
-        { id: 7, img: require('../img/angular.png'), stat: "" },
-        { id: 7, img: require('../img/angular.png'), stat: "" },
-        { id: 8, img: require('../img/nodejs.png'), stat: "" },
-        { id: 8, img: require('../img/nodejs.png'), stat: "" }
+        { id: 1, img: require('../img/Seraphine.png'), stat: "" },
+        { id: 1, img: require('../img/Seraphine.png'), stat: "" },
+        { id: 2, img: require('../img/Thresh.png'), stat: "" },
+        { id: 2, img: require('../img/Thresh.png'), stat: "" },
+        { id: 3, img: require('../img/Vladimir.png'), stat: "" },
+        { id: 3, img: require('../img/Vladimir.png'), stat: "" },
+        { id: 4, img: require('../img/Ashe.png'), stat: "" },
+        { id: 4, img: require('../img/Ashe.png'), stat: "" },
+        { id: 5, img: require('../img/Veigar.png'), stat: "" },
+        { id: 5, img: require('../img/Veigar.png'), stat: "" },
+        { id: 6, img: require('../img/Leona.png'), stat: "" },
+        { id: 6, img: require('../img/Leona.png'), stat: "" },
+        { id: 7, img: require('../img/Senna.png'), stat: "" },
+        { id: 7, img: require('../img/Senna.png'), stat: "" },
+        { id: 8, img: require('../img/Pantheon.png'), stat: "" },
+        { id: 8, img: require('../img/Pantheon.png'), stat: "" }
     ].sort(() => Math.random() - 0.5))
 
     const [prev, setPrev] = useState(-1)//카드 이전값
@@ -54,7 +54,7 @@ const Cards = () => {
     }
 
     return (
-        <div className="container">
+        <div className="game__container">
             { items.map((item, index) => (
                 <Card key={index} item={item} index={index} handleClick={handleClick} />
             )) }

@@ -21,6 +21,10 @@
             &:last-child {
                 border-radius: 50%;
                 background-color: rgb(80, 80, 80);
+
+                @include tablet{
+                    border-radius: 10px;
+                }
             }
         }
 
