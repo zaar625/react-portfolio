@@ -25,6 +25,10 @@
                 color: var(--txt-color);
                 font-size: 0.825rem;
                 padding: 0.5rem 0.8rem;
+                cursor: pointer;
+                &:hover {
+                    color: var(--main-color);
+                }
             }
         }
         &__area {

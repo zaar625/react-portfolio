@@ -35,6 +35,32 @@
                 justify-content: space-between;
                 margin-top: 1rem;
                 align-items: center;
+                position: relative;
+
+                & a:nth-child(1):after {
+                    position: absolute;
+                    content: 'Github';
+                    width: fit-content;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    display: none;
+                    padding-left: 0.5rem;
+                }
+                & a:nth-child(1):hover::after{
+                    display: inline-block;
+                }
+                & a:nth-child(2):after {
+                    position: absolute;
+                    content: 'TIL';
+                    width: fit-content;
+                    top: 50%;
+                    transform: translateY(-50%);
+                    display: none;
+                    padding-left: 0.5rem;
+                }
+                & a:nth-child(2):hover::after{
+                    display: inline-block;
+                }  
             }
             i {
                 font-size: 2rem;

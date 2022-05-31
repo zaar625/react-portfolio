@@ -87,7 +87,7 @@ const Social = () => {
           index={index}
         />
       </div>
-      <span>View more <i className='bx bx-right-arrow-alt'></i></span>
+      <a href='https://www.notion.so/53cbdd5bcc60459c974d9c2f8394a24b?v=ccf635c8ec82423e82a11b3e6ca57285' target="_blank" rel="noreferrer">View more <i className='bx bx-right-arrow-alt'></i></a>
     </div>
   )
 }

@@ -1,7 +1,6 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState} from 'react'
 import {Swiper ,SwiperSlide} from 'swiper/react'
 import { Thumbs,Navigation } from 'swiper'
-import scrollreveal from 'scrollreveal'
 import { projectImages ,projectSmallImages} from '../../assets'
 import { project_description} from '../../configs/sidebarNav'
 
@@ -9,27 +8,8 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/thumbs'
 import './project-swiper.scss'
-import { Link } from 'react-router-dom'
 
 const ProjectSwiper = () => {
-
-  useEffect(() => {
-    const sr = scrollreveal({
-      origin: "left",
-      distance: "100px",
-      duration: 3000,
-      reset: false,
-    });
-    sr.reveal(
-      `
-        .project-swiper__img
-      `,
-      {
-        opacity: 0,
-        interval: 300,
-      }
-    );
-  }, []);
 
   const [activeThumb, setActiveThumb] = useState()
   const [index, setIndex] = useState(0);
@@ -87,27 +67,6 @@ const ProjectSwiper = () => {
 
 const ProjectDescription = (props) => {
 
-  useEffect(() => {
-    const sr = scrollreveal({
-      origin: "right",
-      distance: "100px",
-      duration: 3000,
-      reset: false,
-    });
-
-    sr.reveal(
-      `
-      .ProjectDescription__content__intro,
-      .ProjectDescription__content__skills,
-      .ProjectDescription__content__fuc
-      `,
-      {
-        opacity: 0,
-        interval: 300,
-      }
-    );
-  }, []);
-
   const projdectIndex = project_description[props.index];
  
   return (
@@ -122,13 +81,13 @@ const ProjectDescription = (props) => {
                 <p>{projdectIndex.des}</p>
               </div>
               <div className='ProjectDescription__content__skills'>
-                <h4>Use Skill</h4>
+                <h3>Use Skill</h3>
                 <div>
                   {projdectIndex.skill.map((item, index)=>(<span key={index}>{item}</span>))}
                 </div>
               </div>
               <div className='ProjectDescription__content__fuc'>
-                <h4>Detail</h4>
+                <h3>Detail</h3>
                 {
                   projdectIndex.fuc.map((item , index) => (
                     <div key={index}>
@@ -139,8 +98,8 @@ const ProjectDescription = (props) => {
                 }
               </div>
               <div className='ProjectDescription__content__links'>
-                <Link to='/'>Github <i className='bx bx-right-arrow-alt' ></i></Link>
-                <Link to='/'>View Site <i className='bx bx-right-arrow-alt' ></i></Link>
+                <a target="_blank" rel="noreferrer" href={projdectIndex.url.github}>Github <i className='bx bx-right-arrow-alt' ></i></a>
+                <a target="_blank" rel="noreferrer" href={projdectIndex.url.site}>View Site <i className='bx bx-right-arrow-alt' ></i></a>
               </div>
             </div>
           ) : '로딩중'

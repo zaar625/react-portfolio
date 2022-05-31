@@ -8,7 +8,8 @@ import './assets/libs/boxicons-2.1.1/css/boxicons.min.css'
 import MainLayout from './components/layout/MainLayout';
 
 import './scss/index.scss'
-import Pop from './components/pop/Pop';
+import Modal from './components/modal/Modal';
+
 document.title = 'Lee'
 
 const store = configureStore(
@@ -19,7 +20,7 @@ ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
       <MainLayout/>
-      {/* <Pop/> */}
+      <Modal/>
     </React.StrictMode>
   </Provider>,
   document.getElementById('root')

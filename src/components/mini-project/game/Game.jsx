@@ -4,7 +4,7 @@ import './game.scss';
 
 const Game = () => {
   return (
-    <div className='game col-3  col-md-12 cardstyle'>
+    <div className='game col-3  col-md-12 cardstyle scrollreveal04'>
       <h1>Memory Game with react</h1>
       <Cards/>
 

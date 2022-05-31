@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+// import { Link } from 'react-router-dom'
 import './profile.scss'
 import profileImage from '../../assets/images/me.jpg'
 
@@ -13,15 +13,15 @@ const Profile = () => {
         <div className='profile__info__des'>
           <h3 className='title'>Lee sang yoon</h3>
           <div className='profile__info__des__link'>
-            <Link to='/'><i className='bx bxl-github' ></i></Link>
-            <Link to='/'><i className='bx bx-book-content'></i></Link>
+            <a target="_blank" rel="noreferrer" href='https://github.com/zaar625'><i className='bx bxl-github' ></i></a>
+            <a target="_blank" rel="noreferrer" href='https://www.notion.so/6ee88740c71e4074937a7f49c43540c2?v=1d3ae83fd37948268377f9852ad19a50'><i className='bx bx-book-content'></i></a>
           </div>
         </div>
       </div>
       <div className='profile__character'>
-        <span>#positive</span>
-        <span>#positive</span>
-        <span>#positive</span>
+        <span>#긍정적인</span>
+        <span>#성장가능성있는</span>
+        <span>#호기심많은</span>
       </div>
     </div>
   )

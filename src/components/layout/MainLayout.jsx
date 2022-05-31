@@ -16,9 +16,10 @@ import LoadingSpinner from '../spinner/Spinner'
 const MainLayout = () => {
 
     const [isLoading, setIsLoading] = useState(true);
+    // 로딩보여주기
     setTimeout(() => {
         setIsLoading(false)
-    }, 3000);
+    }, 3500);
 
 
     const themeReducer = useSelector(state => state.ThemeReducer)
@@ -38,7 +39,6 @@ const MainLayout = () => {
         ( <div className={`main__layout ${themeReducer.mode} ${themeReducer.color}`}>
                 <Sidebar />
                 <div className='main__layout__content'>
-                    {/* <Navbar/> */}
                     <div className='layout__content__main col-12 col-md-12'>
                         <Routes>
                             <Route path="/" element={<Aboutme />}></Route>

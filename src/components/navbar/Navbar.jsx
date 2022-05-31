@@ -9,7 +9,7 @@ var ReactRotatingText = require('react-rotating-text');
 
 const Navbar = (props) => {
 const location = useLocation();
-
+console.log(location)
   return (
     <div className='navbar col-md-12'>
       <div className="navbar__title">
@@ -18,7 +18,9 @@ const location = useLocation();
           <ReactRotatingText 
           typingInterval={80}
           items={props.item}/>
-          <span>프론트앤드 개발자 이상윤입니다.</span>
+          {
+            location.pathname === '/' ? (<span>프론트앤드 개발자를 꿈꾸는 이상윤입니다.</span>) : ''
+          }
         </div>
       </div>
       <NavbarUser/>

@@ -17,7 +17,6 @@ const locationData = [
 ];
 
 const Weather = () => {
-
     const [weather , setWeather]= useState({});
     const [preweather, setPreWeather] = useState([]);
     
@@ -29,7 +28,6 @@ const Weather = () => {
     }
     useEffect(()=>{
         weatherFetch(locationData[0]);
-        // weatherPreFetch(locationData[0]);
     },[])
 
     //예보5일 날씨 받아오기
@@ -42,7 +40,7 @@ const Weather = () => {
         })
         setPreWeather(prediction)
     }
-    //날짜 반환
+    //오늘 날짜 반환
     const dateBuilder = (d) => {
         let months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
         let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
@@ -54,6 +52,7 @@ const Weather = () => {
 
         return `${day} ${date} ${month} ${year}`
     }
+
     // 당일 날씨에 따라 배경이미지 변경
     const background =(w) => {
         switch(w){
@@ -74,54 +73,49 @@ const Weather = () => {
         }
         
     }
-    console.log(weather)
-
-    return (
-        <>
-        {   
+    return (           
+            <div className='weather col-4 col-md-12 cardstyle scrollreveal03 '>
+            {   
             Object.keys(weather).length !== 0 ? (
-                <div className='weather col-4 col-md-12 cardstyle'>
-                    <div  className='weather__container' style={{backgroundImage:`url(${background(weather.weather[0].main)})`}}>
-                        <h2>Weather</h2>
-                        <div className='weather__container__areas'>
-                            {
-                                locationData.map((item, index) => (
-                                    <div 
-                                    key={index} 
-                                    onClick={()=> {weatherFetch(item); weatherPreFetch(item);}}>{item}</div>
-                                ))
-                            }
-                        </div>
-                        <div className='weather__container__area'>{weather.name}. {weather.sys.country}</div>
-                        <div className='weather__container__date'>{dateBuilder(new Date())}</div>
-                        <div className='weather__container__state'>
-                            <div className='weather__container__state__temp'>
-                            {
-                                Object.keys(weather).length === 0 ? '' : weather.main.temp
-                            } °c
-                            </div>
-                            <div className='weather__container__state__cloud'>{weather.weather[0].main}</div>
-                        </div>
-                        <div className='weather__container__pre'>
+                <div  className='weather__container' style={{backgroundImage:`url(${background(weather.weather[0].main)})`}}>
+                    <h2>Weather</h2>
+                    <div className='weather__container__areas'>
                         {
-                            Object.keys(preweather).length === 0 ? '' : (
-                                preweather.map((item, index)=> (
-                                    <div className='weather__container__pre__day'>
-                                        <span>5/30</span>
-                                        <span key={index}>{item.main}</span>
-                                        <img src={`http://openweathermap.org/img/wn/${item.icon}.png`} alt=''/>
-                                    </div>
-                                ))
-                            )
+                            locationData.map((item, index) => (
+                                <div 
+                                key={index} 
+                                onClick={()=> {weatherFetch(item); weatherPreFetch(item);}}>{item}</div>
+                            ))
                         }
-                        </div>
-                        <div className='weather__container__search'></div>
                     </div>
-                </div>
-            ) : ''
-        }
-        </>
-
+                    <div className='weather__container__area'>{weather.name}. {weather.sys.country}</div>
+                    <div className='weather__container__date'>{dateBuilder(new Date())}</div>
+                    <div className='weather__container__state'>
+                        <div className='weather__container__state__temp'>
+                        {
+                            Object.keys(weather).length === 0 ? '' : weather.main.temp
+                        } °c
+                        </div>
+                        <div className='weather__container__state__cloud'>{weather.weather[0].main}</div>
+                    </div>
+                    <div className='weather__container__pre'>
+                    {
+                        Object.keys(preweather).length === 0 ? '' : (
+                            preweather.map((item, index)=> (
+                                <div key={index} className='weather__container__pre__day'>
+                                    <span>{new Date(new Date().setDate(new Date().getDate()+(index+1))).getDate()}</span>
+                                    <span key={index}>{item.main}</span>
+                                    <img src={`http://openweathermap.org/img/wn/${item.icon}.png`} alt=''/>
+                                </div>
+                            ))
+                        )
+                    }
+                    </div>
+                    <div className='weather__container__search'></div>
+                </div>)
+                :''
+            }
+            </div>
     )
 }
 
