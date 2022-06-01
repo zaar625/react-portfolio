@@ -30,7 +30,7 @@ const Contact = () => {
       }, []);
   return (
     <div className='contact'>
-        <Navbar/>
+        <Navbar item={['꾸준히 배우며 성장하는 모습 보여드리겠습니다.']}/>
         <div className='contact__header'>
             <p>get in touch</p>
             <h1>Contact</h1>

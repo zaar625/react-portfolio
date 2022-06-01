@@ -1,7 +1,7 @@
 import React ,{useRef}from 'react'
 import {IoIosSettings} from 'react-icons/io'
 import ThemeMenu from '../ThemeMenu/ThemeMunu'
-import Modal from '../modal/Modal'
+import Modal, { ModalContent } from '../modal/Modal'
 import './dropbox.scss'
 
 const clickOutsideRef = (content_ref, toggle_ref) => {
@@ -60,7 +60,7 @@ export const Bellbox = () => {
             <button ref={dropdown_toggle_el}><i className='bx bx-bell'></i></button>
         </div>
         <div ref={dropdown_content_el} className='dropbox__content'>
-            안녕하세요
+            <ModalContent/>
         </div>
     </div>
   )

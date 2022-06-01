@@ -3,7 +3,7 @@ import axios from 'axios'
 import './weather.scss'
 
 const api = {
-    key: "52adf1bb16f14bf661b1190e2e4d45db",
+    key: process.env.REACT_APP_WEATHER_KEY,
     base: "https://api.openweathermap.org/data/2.5/"
   }
 
@@ -32,7 +32,7 @@ const Weather = () => {
 
     //예보5일 날씨 받아오기
     const weatherPreFetch = async(location) => {
-        const {data} = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=52adf1bb16f14bf661b1190e2e4d45db`)
+        const {data} = await axios.get(`https://api.openweathermap.org/data/2.5/forecast?q=${location}&appid=${api.key}`)
         const res = data.list.filter(it => new RegExp("06:00:00","i").test(it.dt_txt))
         let prediction = []
         res.forEach((item)=>{
@@ -78,7 +78,7 @@ const Weather = () => {
             {   
             Object.keys(weather).length !== 0 ? (
                 <div  className='weather__container' style={{backgroundImage:`url(${background(weather.weather[0].main)})`}}>
-                    <h2>Weather</h2>
+                    <h2>OpenWeatherMap API</h2>
                     <div className='weather__container__areas'>
                         {
                             locationData.map((item, index) => (

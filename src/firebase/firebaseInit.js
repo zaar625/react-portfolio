@@ -7,7 +7,7 @@ import 'firebase/database';
 
 
 const firebaseConfig = {
-    apiKey: "AIzaSyDF0lS1E-NAcSevI9NJ2OLhuLn9DEeJjE4",
+    apiKey: process.env.REACT_APP_FIREBASE_KEY,
     authDomain: "sy-portfolio-5214c.firebaseapp.com",
     projectId: "sy-portfolio-5214c",
     storageBucket: "sy-portfolio-5214c.appspot.com",

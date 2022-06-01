@@ -9,7 +9,6 @@ var ReactRotatingText = require('react-rotating-text');
 
 const Navbar = (props) => {
 const location = useLocation();
-console.log(location)
   return (
     <div className='navbar col-md-12'>
       <div className="navbar__title">
