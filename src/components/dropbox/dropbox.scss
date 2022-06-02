@@ -10,6 +10,7 @@
         button  {
             font-size: 1.5rem;
             color: var(--txt-color);
+           
             &:hover{
                 color: var(--main-color);
             }
@@ -34,6 +35,10 @@
                 transform: scale(1);
                 transition: transform 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
                 z-index:1
+        }
+        &.bellBox{
+            background-color: initial;
+            box-shadow: initial;
         }
     }
 }

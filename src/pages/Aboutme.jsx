@@ -31,7 +31,7 @@ const Aboutme = () => {
   return (
     // 라우터구간
     <>
-      <Navbar item={['긍정적인', '열공하는', '열정있는']}/> 
+      <Navbar item={['긍정적인', '배움을 즐기는', '열정있는']}/> 
       <div className='about__me'>
         <div className='grid'>
             <div className='row__one'>

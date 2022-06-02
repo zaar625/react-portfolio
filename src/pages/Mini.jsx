@@ -6,7 +6,6 @@ import Game from '../components/mini-project/game/Game'
 import Caculate from '../components/mini-project/calculate/components/Caculate'
 import Weather from '../components/mini-project/weather/Weather'
 
-
 const Mini = () => {
   // scrollreveal
   useEffect(() => {
@@ -31,7 +30,7 @@ const Mini = () => {
   }, []);
 
   //프로젝트 검색 기능 추가
-  const name = [<ProjectOne key='ProjectOne'/>, <Caculate  key='Caculate'/>,<Weather  key='Weather'/>,<Game  key='Game'/>]; //프로젝트 컴포넌트 배열에 담고,
+  const name = [<ProjectOne key='Music'/>, <Caculate  key='Caculate'/>,<Weather  key='Weather'/>,<Game key='Card game'/>]; //프로젝트 컴포넌트 배열에 담고,
   const [projectComponent, SetProjectComponent] = useState(name) //프로젝트 컴포넌트 상태관리
   const [searchText, setSearchText] = useState('');//input 상태관리
 
@@ -56,14 +55,15 @@ const Mini = () => {
   return (
     <div className='mini'>
       <Navbar item={['리액트로 작은 프로젝트를 만들어 보았습니다.']}/>
-      <div className='mini__input cardstyle col-3'>
+      <div className='mini__input cardstyle col-5 col-md-12'>
         <form>
           <input
             type="text"
             value={searchText}
             onChange={handleChange}
-            placeholder="Project Name"
+            placeholder="Search Name (Music, Caculete, Weather, Card game)"
           />
+          <i className='bx bx-search'></i>
         </form>
       </div>
       <div className='mini__container'>

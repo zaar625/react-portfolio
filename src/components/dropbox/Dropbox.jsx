@@ -59,7 +59,7 @@ export const Bellbox = () => {
         <div className='dropbox__toggle'>
             <button ref={dropdown_toggle_el}><i className='bx bx-bell'></i></button>
         </div>
-        <div ref={dropdown_content_el} className='dropbox__content'>
+        <div ref={dropdown_content_el} className='dropbox__content bellBox'>
             <ModalContent/>
         </div>
     </div>

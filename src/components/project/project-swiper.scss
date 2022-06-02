@@ -65,12 +65,13 @@
         display: flex;
         flex-direction: column;
         padding: 1rem;
-        gap: 1.5rem;
+        gap: 1rem;
         
         &__intro{
             p {
                 font-size: 0.825rem;
                 margin-top: 1rem;
+                line-height: 23px;
             }
         }
 
@@ -109,6 +110,7 @@
             }
             div > p {
                 font-size: 0.825rem;
+                line-height: 20px;
             }   
         }
 

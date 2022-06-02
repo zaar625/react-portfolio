@@ -68,6 +68,20 @@
         flex-wrap: wrap;
         gap: 2rem;
     }
+
+    &__input form {
+        display: flex;
+        align-items: center;
+        position: relative;
+
+        & > i {
+            font-size: 2rem;
+            position: absolute;
+            right: 5px;
+            color: rgba(163, 163, 163, 0.514);
+            cursor: pointer;
+        }
+    }
 }
 
 // contact

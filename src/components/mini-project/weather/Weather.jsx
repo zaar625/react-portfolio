@@ -1,11 +1,12 @@
 import React, {useEffect, useState} from 'react'
 import axios from 'axios'
 import './weather.scss'
+import LoadingSpinner from '../../spinner/Spinner';
 
 const api = {
     key: process.env.REACT_APP_WEATHER_KEY,
     base: "https://api.openweathermap.org/data/2.5/"
-  }
+}
 
 const locationData = [
     'Seoul',
@@ -19,12 +20,17 @@ const locationData = [
 const Weather = () => {
     const [weather , setWeather]= useState({});
     const [preweather, setPreWeather] = useState([]);
-    
+    const [isLoading, setIsLoading] = useState(true);
     //당일 날씨 받아오기
     const weatherFetch = async(location)=>{
+        setIsLoading(true)
         const {data} = await axios.get(`${api.base}weather?q=${location}&units=metric&appid=${api.key}`);
         setWeather(data);
         weatherPreFetch(location)
+        
+        setTimeout(() => {
+            setIsLoading(false)
+        }, 500);
     }
     useEffect(()=>{
         weatherFetch(locationData[0]);
@@ -73,10 +79,10 @@ const Weather = () => {
         }
         
     }
-    return (           
+    return (
             <div className='weather col-4 col-md-12 cardstyle scrollreveal03 '>
             {   
-            Object.keys(weather).length !== 0 ? (
+            Object.keys(weather).length !== 0 && isLoading === false ? (
                 <div  className='weather__container' style={{backgroundImage:`url(${background(weather.weather[0].main)})`}}>
                     <h2>OpenWeatherMap API</h2>
                     <div className='weather__container__areas'>
@@ -113,7 +119,7 @@ const Weather = () => {
                     </div>
                     <div className='weather__container__search'></div>
                 </div>)
-                :''
+                : (<LoadingSpinner/>)
             }
             </div>
     )

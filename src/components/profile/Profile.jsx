@@ -19,8 +19,8 @@ const Profile = () => {
         </div>
       </div>
       <div className='profile__character'>
-        <span>#긍정적인</span>
-        <span>#성장가능성있는</span>
+        <span>#에너제릭한</span>
+        <span>#배움을 즐기는</span>
         <span>#호기심많은</span>
       </div>
     </div>

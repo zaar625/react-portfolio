@@ -7,6 +7,7 @@ const ContactForm = () => {
     const [message, setMessage] = useState('');
   return (
     <div className='contact__form col-8 col-sm-12 cardstyle'>
+    <form method='post'>
         <div className="contact__form__group">
             <label htmlFor="name">
                 Your Name
@@ -44,6 +45,7 @@ const ContactForm = () => {
             </label>
         </div>
         <button type="submit">Send</button>
+    </form>
     </div>
   )
 }

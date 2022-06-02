@@ -12,7 +12,7 @@ const PlayerControls = (props) => {
             props.isPlaying ? (<AiOutlinePauseCircle/>) : (  <AiOutlinePlayCircle/>)
         }
         </button>
-        <button className='music__controls__skip-btn'onClick={()=>props.SkipSong(true)}>
+        <button className='music__controls__skip-btn' onClick={()=>props.SkipSong(true)}>
             <AiOutlineFastForward/>
         </button>
     </div>

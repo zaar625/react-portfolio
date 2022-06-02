@@ -36,10 +36,23 @@
         align-items: center;
         display: flex;
         margin: auto 0 auto auto;
+        position: relative;
 
         &:hover {
             color:var(--main-color);
             cursor: pointer;
+            &::before {
+                display: block;
+            }
+        }
+        &::before {
+            position: absolute;
+            content: "업무의 결과를 보시고 싶으신가요?";
+            width: max-content;
+            top: -25px;
+            right: 1px;
+            font-size: 0.825rem;
+            display: none;
         }
     }
 }

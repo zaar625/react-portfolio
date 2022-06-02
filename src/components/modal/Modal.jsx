@@ -46,7 +46,7 @@ export const ModalContent = (props) => {
                         <p>
                         1. 포트폴리오의 제작과정인 디자인과 기능구현에 대한 자세한 안내 페이지는 아래 가이드 버튼을 클릭하시면 보실 수 있습니다.
                         </p>
-                        <a className='linkBtn' target="_blank" rel="noreferrer" href="https://www.figma.com/file/bi26XF7a9UVRbkESgPIfIK" title="React.js를 활용한 웹 포트폴리오 사이트 안내 페이지 바로가기">Guide
+                        <a className='linkBtn' target="_blank" rel="noreferrer" href="https://www.figma.com/file/c95VmYMc5bji4E48BcPk4S/Untitled?node-id=258%3A14" title="React.js를 활용한 포트폴리오 사이트 안내 페이지 바로가기">Guide
                         <i className='bx bx-right-arrow-alt'></i>
                         </a>
                     </li>
@@ -54,7 +54,7 @@ export const ModalContent = (props) => {
                         <p>
                         2. 해당 사이트의 깃허브도 공개하였으니, 제가 작성한 코드도 확인 가능합니다.
                         </p>
-                        <a className='linkBtn' href="https://github.com/amerimnos/react_portfolio" target="_black">
+                        <a className='linkBtn' href="https://github.com/zaar625" target="_black">
                         Go
                         <i className='bx bx-right-arrow-alt'></i>
                         </a>
@@ -63,7 +63,7 @@ export const ModalContent = (props) => {
                         <p>
                         3. 아울러 제가 공부한 내용이나 이력서는 노션으로 정리되어 있으니 참고해주시면 감사하겠습니다.
                         </p>
-                        <a className='linkBtn' target="_blank" rel="noreferrer" href="https://youtube.com/playlist?list=PLZ1bji2Kya5O-zguxeDkXCyu0lmlliVij" title="React.js를 활용한 웹 포트폴리오 제작기 바로가기">Go
+                        <a className='linkBtn' target="_blank" rel="noreferrer" href="https://www.notion.so/I-AM-0dcdf68786ee4e219f1638eb8609be2e" title="notion 이력서 바로가기">Go
                         <i className='bx bx-right-arrow-alt'></i>
                         </a>
                     </li>

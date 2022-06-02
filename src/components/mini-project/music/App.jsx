@@ -5,29 +5,23 @@ import './app.scss'
 const ProjectOne = () => {
     const [songs, setSongs] = useState([
       {
-        title: "Forget me too ft. Halsey",
-        artist: "Machine Gun Kelly",
-        img_src: require('./images/song-1.jpg'),
-        src: require('./music/on-n-on.mp3')
+        title: "Head Above Water",
+        artist: "Avril Lavigne",
+        img_src: require('./images/avril.jpg'),
+        src: require('./music/Avril_Lavigne.mp3')
       },
       {
-        title: "Song 2",
-        artist: "Artist 2",
-        img_src: require('./images/song-2.jpg'),
-        src: require('./music/somebody-new.mp3')
+        title: "Call Me Maybe",
+        artist: "Carly Rae Jepsen",
+        img_src: require('./images/Call-me-maybe.jpg'),
+        src: require('./music/CallMeMaybe.mp3')
       },
       {
-        title: "Song 3",
-        artist: "Artist 3",
-        img_src: require('./images/song-3.jpg'),
-        src: require('./music/on-n-on.mp3')
+        title: "Hola Hola",
+        artist: "Kard",
+        img_src: require('./images/Hola.jpg'),
+        src: require('./music/Kard_Hola.mp3')
       },
-      {
-        title: "Song 4",
-        artist: "Artist 4",
-        img_src: require('./images/song-4.jpg'),
-        src: require('./music/somebody-new.mp3')
-      }
     ])
 
     const [currentSongIndex, setCurrentSongIndex] = useState(0);
