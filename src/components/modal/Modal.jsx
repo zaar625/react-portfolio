@@ -44,9 +44,9 @@ export const ModalContent = (props) => {
                 <ul className="modal__container__contents__list">
                     <li>
                         <p>
-                        1. 포트폴리오의 제작과정인 디자인과 기능구현에 대한 자세한 안내 페이지는 아래 가이드 버튼을 클릭하시면 보실 수 있습니다.
+                        1. 포트폴리오의 제작과정인 디자인과 기능구현에 대한 자세한 안내 페이지는 아래 가이드 버튼을 클릭하시면 보실 수 있습니다.(ctrl + 0 : zoom 100%)
                         </p>
-                        <a className='linkBtn' target="_blank" rel="noreferrer" href="https://www.figma.com/file/c95VmYMc5bji4E48BcPk4S/Untitled?node-id=258%3A14" title="React.js를 활용한 포트폴리오 사이트 안내 페이지 바로가기">Guide
+                        <a className='linkBtn' target="_blank" rel="noreferrer" href="https://www.figma.com/file/dD2Z9sMRqLqeVc6PdpZbLY/%ED%8F%AC%ED%8A%B8%ED%8F%B4%EB%A6%AC%EC%98%A4-%EC%95%88%EB%82%B4%EC%84%9C?node-id=0%3A1" title="React.js를 활용한 포트폴리오 사이트 안내 페이지 바로가기">Guide
                         <i className='bx bx-right-arrow-alt'></i>
                         </a>
                     </li>
@@ -54,7 +54,7 @@ export const ModalContent = (props) => {
                         <p>
                         2. 해당 사이트의 깃허브도 공개하였으니, 제가 작성한 코드도 확인 가능합니다.
                         </p>
-                        <a className='linkBtn' href="https://github.com/zaar625" target="_black">
+                        <a className='linkBtn' href="https://github.com/zaar625/typescript-portfolio" target="_black">
                         Go
                         <i className='bx bx-right-arrow-alt'></i>
                         </a>
