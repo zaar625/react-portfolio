@@ -27,7 +27,7 @@ export const experience = [
 
 export const projectImages = [
     require('./images/project/bbyb.jpg'),
-    require('./images/project/movie.jpggit '),
+    require('./images/project/movie.jpg'),
     require('./images/project/interactive.jpg'),
     require('./images/project/plant.jpg'),
     require('./images/project/basic.jpg'),
