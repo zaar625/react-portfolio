@@ -5,9 +5,8 @@ import { Provider } from 'react-redux';
 import rootReducer from './redux/reducers';
 
 import './assets/libs/boxicons-2.1.1/css/boxicons.min.css'
-import MainLayout from './components/layout/MainLayout';
-
 import './scss/index.scss'
+import MainLayout from './components/layout/MainLayout';
 import Modal from './components/modal/Modal';
 
 document.title = 'Lee'
