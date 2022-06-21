@@ -1,5 +1,6 @@
+//나중에 추가될 데이터가 있을 경우 확장성 고려
 
-// sidebar
+// sidebar설명
 const sidebarNav = [ 
     {
         link:'/',
@@ -23,8 +24,7 @@ const sidebarNav = [
     }
 ]
 
-// worker
-
+// worker설명
 export const work_description = [
     {
         title:'Coffeenie',
@@ -57,6 +57,7 @@ export const work_description = [
     },
 ]
 
+//프로젝트 설명
 export const project_description = [
     {
         title:'BBYB shop',

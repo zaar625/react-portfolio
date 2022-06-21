@@ -5,7 +5,7 @@ import me from '../../assets/images/me.jpg';
 import { useLocation } from 'react-router-dom';
 
 //lib 변수
-var ReactRotatingText = require('react-rotating-text');
+let ReactRotatingText = require('react-rotating-text');
 
 const Navbar = (props) => {
 const location = useLocation();

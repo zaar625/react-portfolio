@@ -23,6 +23,7 @@ const MainLayout = () => {
 
 
     const themeReducer = useSelector(state => state.ThemeReducer)
+    console.log(themeReducer)
     const dispatch = useDispatch()
 
     useEffect(() => {

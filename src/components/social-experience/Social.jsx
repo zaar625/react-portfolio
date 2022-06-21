@@ -25,7 +25,7 @@ export const Description = (props) => {
         </div>
         <div className='des__contents'>
           <div className='des__contents__key'>
-            <h4>Key Work</h4>
+            <h3>Key Work</h3>
             <div>
               {
                 work.keywork.map((keywork, index)=>(
@@ -35,7 +35,7 @@ export const Description = (props) => {
             </div>
           </div>
           <div className='des__contents__detail'>
-            <h4>Work Detail</h4>
+            <h3>Work Detail</h3>
             <ul>
             {
               work.workdetail.map((detail, index)=>(

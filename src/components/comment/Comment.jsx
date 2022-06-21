@@ -1,6 +1,6 @@
-import React ,{useState, useRef, useEffect} from 'react'
-import './comment.scss'
-import { db } from '../../firebase/firebaseInit'
+import React ,{useState, useRef, useEffect} from 'react';
+import { db } from '../../firebase/firebaseInit';
+import './comment.scss';
 
 const Comment = () => {
     const input = useRef(null)//인풋 초기화
@@ -21,9 +21,8 @@ const Comment = () => {
     const [dataShow, setDataShow] = useState([]);//페이지당 보여질 데이터
     const [dataId, setDataId] = useState([]);//
     let pages = 1 //총 페이지 수 변수
-    console.log(dataShow);
 
-    let range = [] //페이지 숫자 map사용하기 위한 배열 
+    let range = []; //페이지 숫자 map사용하기 위한 배열 
 
     const [currPage, setCurrPage] = useState(0)//현재페이지일경우 css 변화
 
@@ -39,7 +38,7 @@ const Comment = () => {
     if (limit !== undefined) {
         let page = Math.floor(userData.length / Number(limit))//0
         pages = userData.length % Number(limit) === 0 ? page : page + 1//3/5=1
-        range = [...Array(pages).keys()] //[0,1]
+        range = [...Array(pages).keys()] //[0,1,...]
     }
 
     useEffect(()=>{
@@ -68,10 +67,12 @@ const Comment = () => {
     },[])
     //인풋값 뽑아내기    
     const onChange = (e) => {
+        console.log(e.target)
         const { value, name } = e.target; 
+        console.log({name})
         setBlogItem({
         ...blogItem, 
-        [name]: value 
+        [name]: value // name 키의 값을 value 로 설정
         });
     }
     //파이어베이스에 업로드하기
@@ -99,7 +100,6 @@ const Comment = () => {
 
       //firebase 데이터 삭제
     const ItemDelete = (index) => {
-        console.log(dataShow[index].id)
         if (window.confirm('해당 게시물을 삭제하시겠습니까?')) {
             db.collection('userCard').doc(`${dataShow[index].id}`).delete().then(() => {
                 alert('삭제되었습니다')

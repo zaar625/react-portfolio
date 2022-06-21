@@ -8,10 +8,10 @@ const Profile = () => {
     <div className='profile col-4 col-sm-12 cardstyle'>
       <div className='profile__info'>
         <div className='profile__info__image'>
-          <img src={profileImage} alt="profile"/>
+          <img src={profileImage} alt="profile" width="240" height="240"/>
         </div>
         <div className='profile__info__des'>
-          <h3 className='title'>Lee sang yoon</h3>
+          <h1 className='title'>Lee sang yoon</h1>
           <div className='profile__info__des__link'>
             <a target="_blank" rel="noreferrer" href='https://github.com/zaar625'><i className='bx bxl-github' ></i></a>
             <a target="_blank" rel="noreferrer" href='https://www.notion.so/6ee88740c71e4074937a7f49c43540c2?v=1d3ae83fd37948268377f9852ad19a50'><i className='bx bx-book-content'></i></a>

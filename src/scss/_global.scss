@@ -20,6 +20,7 @@ html {
 
 body {
   font-family: 'Montserrat', sans-serif;
+  font-display: swap;
   // font-family: 'Roboto', sans-serif;
   overflow-x: hidden;
 }
@@ -64,6 +65,7 @@ textarea::placeholder {
 input:focus, textarea:focus {
   border: solid 1px var(--main-color);
 }
+
 
 .cardstyle {
   padding: 1rem;

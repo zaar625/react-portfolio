@@ -7,12 +7,11 @@ const Caculate = () => {
   const btnRef = useRef(null);
   const expRef = useRef(null);
 
-  const [expression, setExpression] = useState('');
-  console.log('expression:', expression)
+  const [expression, setExpression] = useState('');//표현상태
 
   useEffect(()=>{
     const btns = Array.from(btnRef.current.querySelectorAll('button'));
-    // flex로 된 가로 너비를 정사각형으로 만들어 줌
+    // flex로 된 가로 너비를 정사각형으로 만들어 주기
     btns.forEach(e=>e.style.height = e.offsetWidth + 'px');
   },[]);
 

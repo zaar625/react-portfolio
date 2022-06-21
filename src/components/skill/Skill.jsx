@@ -71,7 +71,7 @@ const Skill = () => {
         {
           skillImages01.map((item,index)=>(
             <div key={index}>
-              <img src={item} alt='skill img'/>
+              <img src={item} alt='skill img' width="45" height="45"/>
             </div>
           )
           )

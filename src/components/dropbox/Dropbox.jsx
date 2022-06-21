@@ -1,7 +1,7 @@
 import React ,{useRef}from 'react'
 import {IoIosSettings} from 'react-icons/io'
 import ThemeMenu from '../ThemeMenu/ThemeMunu'
-import Modal, { ModalContent } from '../modal/Modal'
+import { ModalContent } from '../modal/Modal'
 import './dropbox.scss'
 
 const clickOutsideRef = (content_ref, toggle_ref) => {
@@ -30,15 +30,13 @@ export const SettingBox = () => {
 
     const dropdown_toggle_el = useRef(null)
     const dropdown_content_el = useRef(null)
-    // console.log(dropdown_toggle_el)
-    // console.log(dropdown_content_el)
 
     clickOutsideRef(dropdown_content_el, dropdown_toggle_el)
 
   return (
     <div className='setting-box'>
         <div className='dropbox__toggle'>
-            <button ref={dropdown_toggle_el}><IoIosSettings/></button>
+            <button ref={dropdown_toggle_el} aria-label="테마옵션"><IoIosSettings/></button>
         </div>
         <div ref={dropdown_content_el} className='dropbox__content'>
             <ThemeMenu/>
@@ -57,7 +55,7 @@ export const Bellbox = () => {
   return (
     <div className='bell-box'>
         <div className='dropbox__toggle'>
-            <button ref={dropdown_toggle_el}><i className='bx bx-bell'></i></button>
+            <button ref={dropdown_toggle_el} aria-label="알림내용"><i className='bx bx-bell'></i></button>
         </div>
         <div ref={dropdown_content_el} className='dropbox__content bellBox'>
             <ModalContent/>
