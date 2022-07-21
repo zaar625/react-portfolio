@@ -38,7 +38,7 @@ export const NavbarUser = ()=>{
         <Dropbox/>
       </div>
       <div className='navbar__user__bottom'>
-        <p>담당자님, 반갑습니다.</p>
+        <p>반갑습니다. <br/>사이트에 오신걸 환영합니다. </p>
       </div>
     </div>
   )

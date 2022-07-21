@@ -84,7 +84,7 @@ const Weather = () => {
             {   
             Object.keys(weather).length !== 0 && isLoading === false ? (
                 <div  className='weather__container' style={{backgroundImage:`url(${background(weather.weather[0].main)})`}}>
-                    <h2>OpenWeatherMap API</h2>
+                    <h2>오늘은 뭐 입지 ♪</h2>
                     <div className='weather__container__areas'>
                         {
                             locationData.map((item, index) => (

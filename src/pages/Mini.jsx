@@ -3,7 +3,7 @@ import scrollreveal from 'scrollreveal'
 import Navbar from '../components/navbar/Navbar'
 import ProjectOne from '../components/mini-project/music/App'
 import Game from '../components/mini-project/game/Game'
-import Caculate from '../components/mini-project/calculate/components/Caculate'
+// import Caculate from '../components/mini-project/calculate/components/Caculate'
 import Weather from '../components/mini-project/weather/Weather'
 
 const Mini = () => {
@@ -18,7 +18,6 @@ const Mini = () => {
     sr.reveal(
       `
         .scrollreveal01,
-        .scrollreveal02,
         .scrollreveal03,
         .scrollreveal04
       `,
@@ -30,7 +29,7 @@ const Mini = () => {
   }, []);
 
   //프로젝트 검색 기능 추가
-  const name = [<ProjectOne key='Music'/>, <Caculate  key='Caculate'/>,<Weather  key='Weather'/>,<Game key='Card game'/>]; //프로젝트 컴포넌트 배열에 담고,
+  const name = [<ProjectOne key='Music'/>,<Weather  key='Weather'/>,<Game key='Card game'/>]; //프로젝트 컴포넌트 배열에 담고,
   const [projectComponent, SetProjectComponent] = useState(name) //프로젝트 컴포넌트 상태관리
   const [searchText, setSearchText] = useState('');//input 상태관리
 

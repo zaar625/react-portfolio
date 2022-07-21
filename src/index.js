@@ -7,7 +7,6 @@ import rootReducer from './redux/reducers';
 import './assets/libs/boxicons-2.1.1/css/boxicons.min.css'
 import './scss/index.scss'
 import MainLayout from './components/layout/MainLayout';
-import Modal from './components/modal/Modal';
 
 document.title = 'Lee'
 
@@ -19,7 +18,7 @@ ReactDOM.render(
   <Provider store={store}>
     <React.StrictMode>
       <MainLayout/>
-      <Modal/>
+      {/* <Modal/> */}
     </React.StrictMode>
   </Provider>,
   document.getElementById('root')

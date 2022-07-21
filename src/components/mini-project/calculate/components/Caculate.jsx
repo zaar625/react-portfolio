@@ -11,6 +11,7 @@ const Caculate = () => {
 
   useEffect(()=>{
     const btns = Array.from(btnRef.current.querySelectorAll('button'));
+    console.log(btns[0].offsetWidth)
     // flex로 된 가로 너비를 정사각형으로 만들어 주기
     btns.forEach(e=>e.style.height = e.offsetWidth + 'px');
   },[]);
@@ -90,7 +91,7 @@ const Caculate = () => {
           <div ref={expRef} className='calculator__result__exp'></div>
           <div className='calculator__result__exp'></div>
         </div>
-        <div ref= {btnRef}className='calculator__btns'>
+        <div ref= {btnRef} className='calculator__btns'>
           {
             btns.map((item, index) => (
               <button 

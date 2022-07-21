@@ -1,10 +1,9 @@
-import React,{useEffect} from 'react'
-import scrollreveal from 'scrollreveal'
-import Profile from '../components/profile/Profile'
-import Intro from '../components/intro/Intro'
-import Skill from '../components/skill/Skill'
-import Social from '../components/social-experience/Social'
+import React,{useEffect} from 'react';
+import scrollreveal from 'scrollreveal';
+import Intro from '../components/Intro/Intro'
+import Lottie from '../components/lottie/Lottie'
 import Navbar from '../components/navbar/Navbar'
+import Skill from '../components/skill/Skill'
 
 
 const Aboutme = () => {
@@ -17,9 +16,9 @@ const Aboutme = () => {
     });
     sr.reveal(
       `
-        nav,
-        .row__one,
-        .row__two
+        .intro,
+        .lottie,
+        .skill
     `,
       {
         opacity: 0,
@@ -33,16 +32,11 @@ const Aboutme = () => {
     <>
       <Navbar item={['긍정적인', '배움을 즐기는', '열정있는']}/> 
       <div className='about__me'>
-        <div className='grid'>
-            <div className='row__one'>
-              <Profile/>
-              <Intro/>
-            </div>
-            <div className='row__two col-md-12'>
-              <Skill/>
-              <Social/>
-            </div>
-          </div>
+        <div className='mine col-7 col-md-12'>
+          <Intro/>
+          <Skill/>
+        </div>
+          <Lottie/>
       </div>
     </>
   )
