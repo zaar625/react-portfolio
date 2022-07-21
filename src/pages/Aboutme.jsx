@@ -1,6 +1,6 @@
 import React,{useEffect} from 'react';
 import scrollreveal from 'scrollreveal';
-import Intro from '../components/Intro/Intro'
+import Intro from '../components/Intro/Intro';
 import Lottie from '../components/lottie/Lottie'
 import Navbar from '../components/navbar/Navbar'
 import Skill from '../components/skill/Skill'
